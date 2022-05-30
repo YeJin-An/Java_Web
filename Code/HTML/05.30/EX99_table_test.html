@@ -1,0 +1,60 @@
+<!-- EX99_table_test.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            /* width: 100%; */
+            height: 3px;
+        }
+        td{
+            padding : 5px;
+            width : 20%;
+            /* text-align: center; */
+            font-size : 12px;
+        }
+
+    </style>
+
+    <h1>1번 문제</h1>
+    <table>
+        <caption>표 제목</caption>
+        <tr><th></th><th>김씨</th><th>이씨</th><th>박씨</th></tr>
+        <tr><td>월급</td><td>100원</td><td>200원</td><td>400원</td></tr>
+        <tr><td>월급</td><td>100원</td><td>200원</td><td>400원</td></tr>
+    </table>
+
+    <hr>
+
+    <h1>2번 문제</h1>
+    <table>
+        <tr><td colspan="5">1</td>
+        <tr><td rowspan="5">6</td> <td colspan="4">7</td>
+        <tr><td>12</td><td rowspan="2">13</td><td>14</td><td rowspan="3">15</td>
+        <tr><td>17</td><td>19</td>
+        <tr><td colspan="2">22</td><td>24</td>
+        </tr>
+    </table>
+
+    <hr>
+
+    <h1>3번 문제</h1>
+    <table>
+        <tr><th colspan="2">부서명</th><th>전화번호 (02+)</th><th>팩스번호 (02+)</th>
+        <tr><td colspan="2">종합상황실</td><td>123-1001~1005</td><td>321-1001</td>
+        <tr><td rowspan="2">비서실</td><td>비서실장</td><td>123-1111</td><td rowspan="2">321-1002(사장) 321-1003(감사)
+        </td>
+        <tr><td>비서실</td><td>123-1112(사장) 123-1113(감사)</td>
+        <tr><td rowspan="3">홍보실</td><td>홍보실장</td><td>123-1001</td><td rowspan="3">321-1101</td>
+        <tr><td>홍보부</td><td>123-1230~1234</td>
+        <tr><td>국제협력부</td><td>123-1230~1234</td>
+        </tr>
+    </table>
+
+</body>
+</html>
