@@ -35,10 +35,13 @@
     <style>
     table,th,td{
         border: 1px solid black;
-        /* border-collapse: collapse; */
+        border-collapse: collapse;
     }
     th,td{
         padding: 3px;
+    }
+    table{
+        width:100%
     }
     </style>
 
@@ -56,15 +59,27 @@
     -->
     <hr/>
     <table> <!-- colsapan -->
+        <caption>student Records</caption>
         <tr><td colspan="2">1</td></tr>
         <tr><td>3</td><td>4</td></tr>
     </table>
 
     <hr>
-    
+
     <table> <!-- rowspan -->
+        <caption>student Records</caption>
         <tr><td rowspan="2">1</td><td>2</td></tr>
         <tr><td>3</td></tr>
     </table>
+
+    <hr>
+
+    <table>
+        <tr><td rowspan="2">홍길동</td><td>박길동</td></tr>
+        <tr><td>박길동</td></tr>
+        <tr><td colspan="2">맹길동차길동</td></tr>
+    </table>
+
+
 </body>
 </html>
