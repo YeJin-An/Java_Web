@@ -1,0 +1,79 @@
+<!-- EX03_form.html -->
+
+<!--
+
+    HTML : 웹페이지의 TAG를 통해서 구조 만듬.
+
+    World Wde web : 인터넷에 연결된 사람들끼리 서로 정보를 공유할 수 있는 공간
+    * 웹 : 인터넷환경, 공간
+
+    1. 웹서버 : 사용자가 어디론 접근라는 목적지(* 가게, 슈퍼)
+        - 사용자의 요청을 항상 받아주며, 항상 실행되어있어야 한다.
+
+    2. 웹 브라우저 : 사용자가 서버로 정보를 보낼때 쓰는 프로그램(* 탈것, 이동수단)
+        - 서로 협의가된 프로그램으로 서버에 접근
+
+    서버 + 클라이언트
+    서버 : 항상 실행되어야하고 클라이언트이 요청한 것을 응답해주는 곳
+    클라이언트 : 사용자, 서버에게 요청을 하는 주체, 응답을 받는 주체
+
+    클라이언트들이 서버로 전달하기 위한 포장지 <form> 태그
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        <form> : input 캐그들의 담긴 값을 서버로 데이터를 전달을 돕는 포장 태그
+        필수 속성 method, action
+        method : 서버와의 통신 약속을 정하는 속성, 데이터 전달 방식을 정하는 속성
+        action : 전송을 할때 이동해야하는 페이지 명 <a href> 와 같은 기능
+
+        입력이 끝나면 끝낫다는 사건이 필요합니다.
+        사건을 만들기위해서 보통 버튼을 사용
+
+        form 태그와 버튼등의 submit 이라는 기능으로 통해서 서버에게 데이터를 전송
+        <input type="submit"> 태그를 통해서 submit 기능이 있는 버튼을 생성
+
+    -->
+
+    No-Form : <input type="text" placeholder="ID"><br>
+    <input type="button" value="일반버튼">
+    <input type="submit" value="제출버튼">
+    <input type="reset" value="초기화버튼">
+    
+    <hr/>
+    
+    <form action="#">
+
+        <!-- 
+            <button type="submit">와 <input type="submit">의 차이점
+            1. button 은 내용을 가질 수 있다
+            -> can have content
+            2. input는 내용을 가질 수 없다 (null)
+            -> cannot(it is a null element)
+            -> 마크업을 더할 수 없거나 사진을 삽입할 수 없음
+        -->
+
+        Form : <input type="text" placeholder="ID"><br>
+        <input type="button" value="일반버튼">
+        <input type="submit" value="제출버튼">
+        <input type="reset" value="초기화버튼">
+
+        <!-- button의 기본 타입은 submit입니다. -->
+        <button>button</button>
+        <button type="button"> submit</button>
+        <button type="submit"> submit</button>
+
+    
+
+    </form>
+    
+</body>
+</html>
