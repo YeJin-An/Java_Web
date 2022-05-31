@@ -50,7 +50,7 @@
     
     <hr/>
     
-    <form action="#">
+    <form id="myform" action="#">
 
         <!-- 
             <button type="submit">와 <input type="submit">의 차이점
@@ -62,6 +62,9 @@
         -->
 
         Form : <input type="text" placeholder="ID"><br>
+        메일 : <input type="text" id="email"><br>
+        메일 : <input type="email"><br>
+
         <input type="button" value="일반버튼">
         <input type="submit" value="제출버튼">
         <input type="reset" value="초기화버튼">
@@ -71,9 +74,19 @@
         <button type="button"> submit</button>
         <button type="submit"> submit</button>
 
-    
-
     </form>
+
+    <script>
+        document.querySelector("#myform").addEventListener("submit", function(e){
+
+        var email = document.querySelector("#email"); //제출버튼
+        var isValidate = false;
+        var regexp =/[a-z]+[a-z0-9]*\.?[a-z0-9]*@[a-z0-9]+\.?[a-z0-9]*/i;
+
+        if(!regexp.test(email.value)){
+            alert("이메일 형식이 다릅니다.")}
+        })
+    </script>
     
 </body>
 </html>
