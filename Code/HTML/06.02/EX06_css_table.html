@@ -1,0 +1,62 @@
+<!-- EX06_css_table.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        ol, ul {
+            border : 1px solid black;
+            /* list-style-type: circle;
+            background: lightyellow; */
+            width: 400px;
+
+            list-style-type: none;
+            padding: 0px;
+        }
+        
+        li{
+            border: 1px solid red;
+            width: 50%;
+            background: lightcoral;
+        }
+
+        table{
+            border: 1px solid black;
+            border-collapse: separate;
+            border-spacing: 20px 30px;
+            width: 50%;
+            height: 250px;
+        }
+
+        tr{
+            border: 1px solid red;
+        }
+
+        td{
+            border-bottom: 1px solid blue;
+            text-align: right;
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>사과</li>
+        <li>딸기</li>
+        <li>바나나</li>
+        <li>수박</li>
+    </ol>
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+    <table>
+        <tr><td>100</td><td>200</td></tr>
+        <tr><td>300</td><td>400</td></tr>
+    </table>
+</body>
+</html>
