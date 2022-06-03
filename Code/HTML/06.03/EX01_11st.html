@@ -16,7 +16,7 @@
             margin: auto;
         }
         #id, #pwd{
-            width: 326px; /*  */
+            width: 326px;
             height: 46px;
             border: 1px solid rgb(220, 220, 220)
         }
@@ -43,16 +43,32 @@
             color: #999;
             margin: 0px;
         }
-        .kakao{
-            background-image: url("../06.02/img/3.png");
-            
-            background-size: 100%;
+        .logo{
+            margin-top: 90px;
+        }
+        .spanLogo{
+            /* 공통부분 합치기!! */
+            width: 84px;
+            height: 84px;
+            background-size: 80%;
             padding : 80px 10px 0px;
             width: 84px;
             height: 84px;
 
             background-repeat: no-repeat;
             color: #999;
+        }
+        .kakao{background-image: url("../06.02/img/3.png");}
+        .sky{background-image: url("../06.02/img/1.png");}
+        .naver{background-image: url("../06.02/img/2.png");}
+        .phone{background-image: url("../06.02/img/4.png");}
+
+        .left_side{
+            display: inline-block;
+        }
+        .right_side{
+            display:inline-block;
+            margin-left: 27px;
         }
         /* 태그를 선택하는 방법 3가지 
             1. 태그명 / id / class + 태그내에 작성하는방법(인라인스타일)
@@ -71,7 +87,6 @@
         </header>
         <!-- 로그인 담당할 박스 -->
         <div>
-            로그인 담당할 박스
             <section>
                 <article>
                     <input type="text" id="id" placeholder="아이디"><br>
@@ -93,10 +108,10 @@
         <div class="simpleLogin">
             <h2 class="title" >간편로그인</h2>
             <div class="logo">
-                <a href="#카카오"><span class="kakao">카카오</span></a>
-                <a href="#T아이디">T아이디</a>
-                <a href="#네이버">네이버</a>
-                <a href="#휴대폰">휴대폰</a>
+                <a href="#카카오"><span class="kakao spanLogo">카카오</span></a>
+                <a href="#T아이디"><span class="sky spanLogo">T아이디</span></a>
+                <a href="#네이버"><span class="naver spanLogo">네이버</span></a>
+                <a href="#휴대폰"><span class="phone spanLogo">휴대폰</span></a>
             </div>
         </div>
     </div>
