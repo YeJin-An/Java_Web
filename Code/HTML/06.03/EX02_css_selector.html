@@ -23,6 +23,18 @@
             inline-block : 라인을 차지하는 행동은 inline처럼
                     크기와 너비, 마진등 설정하는 행동은 block처럼
 
+            *블록태그 : 태그들을 감사는 태그
+            *인라인태그 : 내용을 감싸는 태그
+            *주의 인라인 태그 안에는 블록 태그를 쓰면 안됩니다.
+            *속성을 변경하더라고 태그의 기본속성이 인라인태그인 태그 안에 블록태그 슬수없음
+            인라인태그 안에 태그를 써야할 경우 <span> 사용
+
+            <div> <span>
+            <div> <p>
+            <p> <div>
+            <span> <div> 문제발생
+            <span> <span>
+
         */
 
         div{
@@ -45,6 +57,22 @@
         }
         .inline-block{
             display: inline-block;
+        }
+        /* display: none 
+            - 요소(태그)를 숨기는 속성, 눈에도 안보이고, 레이아웃상에도 없는
+        */
+        .display{
+            display: none;
+        }
+
+        /*
+            visibility: hidden;
+                -요소(태그)를 숨기는 속성, 눈에는 안보이고, 레이아웃상에서는 존재.
+        */
+
+        .visibility{
+            visibility: hidden;
+
         }
     </style>
 </head>
