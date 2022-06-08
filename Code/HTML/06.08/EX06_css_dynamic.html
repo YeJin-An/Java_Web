@@ -1,0 +1,49 @@
+<!-- EX06_css_dynamic.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> EX06_css_dynamic.html</title>
+    <style>
+        a:link{
+            /* a태그의 링크가 한번도 안눌렸을때 속성 */
+            color: red;
+        }
+
+        a:visited{
+            /* a태그의 링크가 한번이라도 눌렀을때 속성 */
+            color : royalblue;
+        }
+
+        a:hover{
+            /* 마우스가 해당 태그위로 올라와있을때 속성 */
+            /* background-color: slateblue; */
+
+            border-bottom: 2px solid blue;
+        }
+
+        a:active{
+            /* 마우스가 해당 캐그를 클릭하고 있을때 속성 (클릭을 유지) */
+            background-color: springgreen;
+        }
+
+        input:hover{
+            border : 10px solid orange;
+        }
+
+        input:focus{
+            border : 10px solid red;
+        }
+    </style>
+</head>
+<body>
+    <a href="#1">동적 의사 클래스 연습</a><br>
+    <a href="#2">동적 의사 클래스 연습</a><br>
+    <a href="#3">동적 의사 클래스 연습</a><br>
+    <a href="#4">동적 의사 클래스 연습</a><br>
+
+    <br><br>
+
+    <input type="text" value="test중입니다." />
+</body>
+</html>
