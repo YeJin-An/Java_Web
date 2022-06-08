@@ -12,38 +12,39 @@
             id, class 주셔서 작업, 우선순위를 통해서
         */
 
-        .txt3{
-            color: red;
+        div > p {
+            color : red;
         }
-
-        .txt3_1 > p {
-            color: orange;
+        div > div > p {
+            color : orange;
         }
-        .txt3_1{
-            color: yellow;
+        div > div > div > p {
+            color : yellow;
         }
-        .txt3_1 > span{
+        div > div > span{
             color : green;
         }
-        
-        .txt3_2 > p {
-            color : blue;
+        div > div > span + div > p {
+            color : blue; 
         }
-
-        .txt3_1 > div ~ p{
+        div > div > div + p{
             color : navy;
         }
-        .txt3_1 > div > div > p{
+        div > div > div > div > p{
             color : purple;
         }
+        
+    
+    
+        
     </style>
 </head>
 <body>
     
-<div class="txt3">
+<div>
     <p>자식1</p>
     
-    <div class="txt3_1">
+    <div>
         <p>손자1</p>
 
         <div>
@@ -52,7 +53,7 @@
 
         <span>손자2</span>
 
-        <div class="txt3_2">
+        <div>
             <p>증손자2</p>
         </div>
 
