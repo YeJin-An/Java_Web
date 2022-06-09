@@ -77,9 +77,37 @@ for(let i = 1; i < 101; i++){
 }
 
 // 1부터 100가지중 15의 배수가 몇개있는 출력해보세요.
+// #1
 console.log("");
 let arr = [];
 for(let i =0; i<101; i++){
     if(i % 15 == 0){let count =  arr.push(i);}
 }
 console.log(arr.length);
+
+// #2
+let count = 0;
+for(let i=1; i<=100; i++){
+    if(i % 15 == 0){ count++; }
+}
+console.log(count);
+
+
+// 해당변수의 약수들을 모두 출력해보세요.
+    // 약수 : 나누어서 나머지가 0인 수
+    // 예) 60의 약수 : 1,2,3,4,6,10,15,20,30,60
+
+//1. 변수선언
+//2. 반복문을 1부터 해당변수가지 1씩 증가시키면서 반복
+//3. 1씩 증가하는 그 변수가 원해변수에 나눠떨어지는지 확인
+//4. 나눠떨진다면 출력
+
+//해당 변수의 약수 중에 가장 큰수를 출력해보세요.
+let originalNum = 60;
+let arr1 = [];
+for(let i=1; i<=originalNum; i++){
+    if(originalNum % i == 0){let count = arr1.push(i);}
+}
+console.log(arr1 + " : " +originalNum);
+
+// 두 변수의 최대공약수를 구해보세요.
