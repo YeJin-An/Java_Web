@@ -101,12 +101,81 @@
 
     document.write(name);
 
-    console.log(s1);
-    console.log(s2);
-    console.log(s3);
-    console.log(s4);
-    console.log(s1+s2);
-    console.log(s2+s3);
+    
+    //var n5 = 값; // 값 : 문자인데 쿼터로 감싸지 않아서 컴퓨터가 숫자로 인식으로 하려고함.
+    // 문법은 꼭 지켜야하는 것
 
+    // 불리언 : 참거짓을 의미하는 용어
+    // 사전에 정의된 키워드이기 때문에 에러아님, 소문자 작성
+    var b1 = true;   // 참
+    var b2 = false;  // 거짓
+    
+    var un;
+    var unl = null;
 
+    console.log("-----------------------");
+    console.log(b1);   // 불리언
+    console.log(un);   // 정의된게 없다 : undifined : 타입 조차 없는 상태
+    console.log(unl);  // null : 널 0 , 눌 X : 타입은 있는데 값이 정래지지 않는 상태: 비어있는 상태
+    
+    // 숫자, 문자, 불리언, unde, null 선언된 침구들의 타입 확인
+
+    // typeof : 자바스크립트의 경우 var , let 등 선언할때 값에 의해서 자료형이 정해짐
+    //          var < 만 보고서는 자료형을 확인할수가 없음.
+    //          > 자료형이 관대하다: 값에 의해 자료형이 결정 (JAVA와 차이점)
+    //          >> JAVA특 : 자료형에 맞춰서 값을 대입해야함.
+    // typeof통해서 항상 자료형을 확인하는 습관
+
+    document.write("<br>"); // <body>태그안에 <br> 태그가 작성됨.
+    document.write(typeof 10 + "<br>"); 
+    document.write(typeof '안녕' + "<br>"); 
+    document.write(typeof true + "<br>"); 
+    document.write(typeof n1 + "<br>");     // 10
+    document.write(typeof s1 + "<br>");     // "안녕"
+    document.write(typeof b1 + "<br>");     // true
+    document.write(typeof un + "<br>");     // 값이 없음.
+    document.write(typeof nul + "<br>");    // null
+        // typeof 확인할 값(변수) >> 타입
+        
+        
+        // 변수 : 숫자와 문자열 
+    var test = 10;
+    document.write("<br><hr>"); // <body>태그안에 <br> 태그가 작성됨.
+    document.write("test");
+    // 문자열 > 더블쿼터,싱글쿼더로 감싼 것
+    // 더블쿼터, 실글쿼터 감싸지 않은 문자 > 변수명으로 인식을 해줍니다.
+    // 변수명이 있으면 그에 해당하는 값 보여지고, 없으면 에러
+    document.write(test);
+    // document.write(test1); //test1 is not defined (변수가 없습니다 라는 에러)
+
+    document.write("<br><hr>"); // 문자 <br><hr> 이동 > 브라우저 태그로 인식
+
+    // + : 더하기 > 숫자 + 숫자 : 합산 / 문자 + 문자 : 문자문자(문자연결)
+    document.write(10+10);
+    document.write("<br>");
+    document.write('10'+'10');
+    document.write('안녕'+'하세요');
+
+    var s1 = "10";  // 문자
+    var n1 = 10;    // 숫자
+    document.write(s1+n1);
+    document.write(typeof(s1+n1));
+    document.write("<br>");
+    // * 숫자 + 숫자일때만 더하기 > 그외는 문자합치기
+
+    var test = 10;
+    document.write(test + " 는 " + typeof test + "입니다 <br>");
+    test = "문자입력"
+    document.write(test + " 는 " + typeof test + "입니다<br>");
+    let test2 = 10;
+    document.write(test2 + " 는 " + typeof test2 + "입니다 <br>");
+    test2 = "문자입력" // 재할당 가능
+    document.write(test2 + " 는 "+ typeof test2 + "입니다 <br>");
+
+    
+    const test3 = 10; //재선언 불가
+    document.write(test3 + " 는 "+ typeof test3 + "입니다 <br>");
+    test3 = '문자입력'; // 재할당에러 발생 Assignment to constant variable.
+                        // 상수 변수에 할당. 에러
+    document.write(test3 + " 는 "+ typeof test3 + "입니다 <br>");
 </script>
