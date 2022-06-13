@@ -71,11 +71,70 @@
     console.log(i * "문자1"); 
 
     // 명시적 타입 변환 (형변환을 우리가 직접 정의)
-    // Number()
+    // Number() : 숫자로만 작성된 문자를 순자의 자료형으로 변경
     // String()
     // Boolean()
     // Object()
     // parseInt()
     // parseFloat()
+
+    console.log("-----------")
+    console.log(typeof "10"); // "10"은 String입니다.
+    console.log(Number("10"), typeof Number("10")); // 형변환 : 문자 > 숫자로 형변환
+    console.log(10+"10" , 10+Number("10") , 10+Number("ten10"));
+
+    console.log(Number.parseInt("10"), Number.parseFloat("10"));
+    // 10 : 정수형 (소수점 없음)
+    console.log(Number.parseInt("10.23"), Number.parseFloat("10.23"));
+    // 10.23 : 실수형 (소수점 있음)
+    console.log("-----------")
+    
+    console.log("예외");
+    console.log(Number("10문자열")) // 간단하게 하는 방법 : 예외를 처리 못함
+    console.log(Number.parseInt("10문자열")) // 처음글자가 숫자일경우는 변환 해줌
+    console.log(Number.parseFloat("10문자열")) // 
+    console.log(Number.parseInt("문자열10")) // NaN 
+    console.log(Number.parseFloat("문자열10")) // 
+    console.log("-----------")
+    
+    /* 숫자 > 문자 */
+    console.log("숫자 > 문자")
+    // String()
+    console.log(String(10));
+    console.log(typeof String(10));
+    console.log(10+String(10)); 20> 1010
+    
+    /* boolean : 참(true,1) 거짓(false,0) */
+    console.log("boolean");
+    console.log(true);
+    console.log(String(true));
+    console.log(Number(true)); // 1 : true : 
+    
+
+    console.log("-----------")
+    var i = 0;
+    console.log(i);
+    console.log(typeof i);
+    console.log(typeof String(i));
+    console.log(typeof Boolean(i));
+    console.log(Boolean(i));
+
+    console.log("----------------")
+    console.log(typeof ("6"-1)); // number
+    console.log(typeof ("6"+1)); // string
+    console.log(typeof ("6"*1)); // number
+    console.log(typeof ("6"/1)); // number
+    console.log("------------------")
+    console.log(typeof (8-"1")); // number
+    console.log(typeof (8+"1")); // string
+    console.log(typeof (8*"1")); // number
+    console.log(typeof (8/"1")); // number
+
+    console.log("-----------------")
+    console.log(Object(10));
+    console.log(Object("10"));
+    console.log(Object(true));
+    console.log(Object(parseInt(10)));
+    console.log(Object(parseFloat(10.23)));
 
 </script>
