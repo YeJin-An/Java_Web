@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .div ul{
+            background-color: rgb(192, 136, 32);
+            width:100px;
+            list-style: none;
+            margin: 0 ;
+            padding: 0 ;
+        }
+        
+        .div li a{
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+            text-align: center;
+        }
+
+        .dropdown-div{
+            display: none;
+            position : absolute;
+            min-width: 80px;
+            padding: 5px;
+            background-color: rgb(246, 230, 194);
+        }
+
+        .dropdown:hover .dropdown-div{
+            display: block;
+        } 
+
+    </style>
+</head>
+<body>
+    <div class="div">
+        <ul>
+            <li>
+                <div class="dropdown"><a href="#">Dropdown</a>
+                    <div class="dropdown-div">
+                    <a href="#">새해</a>
+                    <a href="#">복</a>
+                    <a href="#">많이</a>
+                    <a href="#">받으세요</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
