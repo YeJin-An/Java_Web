@@ -1,0 +1,30 @@
+<!-- EX06_js_if_test3.html -->
+
+<script>
+    /*
+        1 ~ 12 월
+        1 > 31일까지 있습니다.
+        2 > 28일까지 있습니다.
+        3 > 31일까지 있습니다.
+
+        12 > 30일가지 있습니다.
+    */
+
+    // 변수
+    let month = Number(prompt("month를 입력하세요"));
+
+    // 로직 + 결과
+    if((1 <= month) && (month <=12)){
+        if(month > 7 && month %2 ==0){
+            document.write(month+'월은 31일까지 있습니다.');
+        }else if(month <= 7 && month %2 !==0 ){
+            document.write(month+'월은 31일까지 있습니다.');
+        }else if (month == 2){
+            document.write(month+'월은 28일까지 있습니다.');
+        }else{
+            document.write(month+'월은 30일까지 있습니다.');
+        }
+    }else{
+        document.write("당신은 달력의 형식을 지키지 않았습니다.");
+    }
+</script>
