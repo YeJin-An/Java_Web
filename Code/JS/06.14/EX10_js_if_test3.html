@@ -1,0 +1,36 @@
+<!-- EX10_js_if_test3.html -->
+
+<script>
+
+    // Math.random() : 난수를 생성해주는 함수
+    // 1 ~ 0 사이에 있는 랜덤한 소수점 숫자
+    // 1 ~ 100까지
+
+    let random1 = Math.floor(Math.random()*100) +1;
+    let random2 = Math.floor(Math.random()*100) +1;
+    let random3 = Math.floor(Math.random()*100) +1;
+
+    document.write("랜덤한 숫자 1 : "+random1+"<br>"); 
+    document.write("랜덤한 숫자 2 : "+random2+"<br>"); 
+    document.write("랜덤한 숫자 3 : "+random3+"<br>");
+    
+    // 변수 갯수 상관없고
+    // 최대값 출력
+    // 비교 > 큰 숫자를 어떤 공단에 대입(저장)
+    // 저장된 변수와 비교 > 큰 숫자를 어떤 공간에 대입
+
+    let max = [];
+    
+    if(random1 > random2 && random1 > random3){
+        max.push(random1);
+        document.write("1. 최대값 : " + max );
+    }else if(random2 > random3 && random2 > random1 ){
+        max.push(random2);
+        document.write("2. 최대값 : " + max );
+    }else{
+        max.push(random3);
+        document.write("3. 최대값 : " + max );
+    }
+
+
+</script>
