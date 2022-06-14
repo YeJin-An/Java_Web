@@ -1,0 +1,52 @@
+<!-- EX06_js_if_test2.html -->
+
+<script>
+    // 1. 사용자가 입력한 값이 홀수인지 짝수인지 구분하는 것
+
+    // 단계
+    // 1. 변수 선언(생성)
+    // 2. 변수에게 사용자가 입력한 값을 대입(초기화, 할당)
+    // 3. 제어문 작성
+    // 4. 짝수 홀수 / 0 은 0입니다.
+
+    // 변수
+    let number = Number(prompt("값을 입력하세요"))
+
+    // 로직 + 결과
+    if(number == 0){
+        document.write("짝수 '0' 입니다.")
+    }else if(number %2 != 0){
+        document.write("홀수의 ");
+        if(number ==3 || number %3 > 0){
+            document.write("'양수'  입니다");
+        }else if(number == -3 || number %3 < 0){
+            document.write("'음수' 입니다.");
+        }else{
+            document.write("원인을 알수 없는 에러가 발생하였습니다.");
+        }
+    }else if (number %3 != 0){
+        document.write("짝수의 ");
+        if(number == 2 || number %2 > 0 ){
+            document.write("'양수'  입니다");
+        }else if(number == -2 || number %2 < 0){
+            document.write("'음수' 입니다.");
+        }else{
+            document.write("원인을 알수 없는 에러가 발생하였습니다.");
+        }
+    }else{
+        document.write("6의 배수의 '짝수'입니다.");
+    }
+
+    // switch로 변경
+
+    switch (number != 0) {
+        case number %2 ==0 :
+            console.log("짝수입니다.")
+            break;
+        case number %3 ==0:
+            console.log("홀수입니다.")
+        default:
+            console.log("원인을 알수 없는 에러가 발생하였습니다.")
+            break;
+    }
+</script>
