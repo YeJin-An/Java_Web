@@ -1,0 +1,62 @@
+<!-- EX04_js_if_logical.html -->
+
+<script>
+
+    // A논리식      B논리식     A && B (and)     A || B (or)     !A (not)
+    // true         true        true            true            false
+    // true         false       false           true            false
+    // false        true        false           true            true
+    // flase        false       false           false           true
+
+    let t = true;
+    let f = false;
+
+    // 참 && 참
+    if(t && t){
+        document.write("1. t && t : and 참입니다.<br>")
+    }
+    // 참 && 거짓
+    if(t && f){
+        document.write("2. t && f : and 참입니다.<br>")
+    }
+    // 거짓 && 참
+    if(f && t){
+        document.write("3. f && t : and 참입니다.<br>")
+    }
+    // 거짓 && 거짓
+    if(f && f){
+        document.write("4. f && f : and 참입니다.<br>")
+    }
+
+    // -- or
+    // 참 || 참
+    if(t || t){
+        document.write("1. t || t : or 참입니다.<br>")
+    }
+    // 참 || 거짓
+    if(t || f){
+        document.write("2. t || f : or 참입니다.<br>")
+    }
+    // 거짓 || 참
+    if(f || t){
+        document.write("3. f || t : or 참입니다.<br>")
+    }
+    // 거짓 || 거짓
+    if(f || f){
+        document.write("4. f || f : or 참입니다.<br>")
+    }
+    
+    
+    if(!t){
+        document.write("1. !t : not 참입니다.<br>")
+    }
+    if(!f){
+        document.write("2. !f : not 참입니다.<br>")
+    }
+    
+    // 거짓 || 거짓
+    if(!(f || f)){
+        document.write("4. f || f : or 참입니다.<br>")
+    }
+    
+</script>
