@@ -1,0 +1,32 @@
+<!-- EX09_js_if_two2.html -->
+
+<script>
+
+    // M W
+    let gender = "w";
+    let age = 20;
+
+    // 1. W 이나 M 통해서 남자, 여자, 성별없음.
+    // 2. 나이 : 20 이상 성인 / 19 이하 학생
+
+    // M, 15
+    // 결과 : 남성입니다.
+    //        학생입니다.
+
+    // W, 20
+    // 결과 : 여성입니다.
+    //        성인입니다.
+
+    if(age >=1){
+        if (gender == "w"){
+            document.write("여성이면서, ");
+            if(age >= 20 ){document.write("성인입니다.");}
+            else{document.write("학생입니다.");}
+        }else if (gender == "M"){
+            document.write("남성이면서, ");
+            if(age >= 20 ){document.write("성인입니다.");}
+            else{document.write("학생입니다.");}
+        }else{document.write("기준에 부합하지 않는 숫자를 입력하였습니다.")}
+    }else{document.write("age가 1보다 작을 수는 없습니다.")}
+    
+</script>
