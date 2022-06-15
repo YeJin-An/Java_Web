@@ -1,0 +1,44 @@
+<!-- EX07_js_for2.html -->
+
+<script>
+
+    for(let i = 0; i < 10; i++){
+        document.write(i + " 번째 실행중<br>");
+    }
+
+    document.write("<br><hr><br>")
+    
+    // 1. 1 ~ 10
+    for(let i = 1; i < 11; i++){document.write(i+" ");}
+    document.write("<hr>")
+    
+    // 2. 20 ~ 30
+    for(let i = 20; i < 31; i++){document.write(i+" ");}
+    document.write("<hr>")
+    
+    // 3. 1 ~ 100
+    for(let i = 1; i < 101; i++){document.write(i+" ");}
+    document.write("<hr>")
+    
+    // 4. 10 ~ 1
+    for(let i = 10; i > 0; i--){document.write(i+" ");}
+    document.write("<hr>")
+    
+    // 5. 2 4 6 8 10
+    for(let i = 1; i < 11 ; i++){if(i % 2 == 0){document.write(i+" ");}}
+    document.write("<hr>")
+    
+    // 6. 10 8 6 4 2
+    for(let i = 10; i > 0 ; i--){if(i % 2 == 0){document.write(i+" ");}}
+    document.write("<hr>")
+    
+    // 7. 1 ~ 10 진행되는데, 
+    // 1 : 홀수입니다. 
+    // 2 : 짝수입니다. 
+    // 3 : 홀수입니다.
+    for(let i = 1; i < 11 ; i++){
+        if(i % 2 == 0){document.write(i+" : even 입니다. <br>");}
+        else if(i % 2 != 0){document.write(i+" : odd 입니다. <br>");}}
+    document.write("<hr>")
+
+</script>
