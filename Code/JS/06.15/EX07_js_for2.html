@@ -39,6 +39,16 @@
     for(let i = 1; i < 11 ; i++){
         if(i % 2 == 0){document.write(i+" : even 입니다. <br>");}
         else if(i % 2 != 0){document.write(i+" : odd 입니다. <br>");}}
+        document.write("<hr>")
+        
+    // 2. 1 ~ 100 숫자중에 홀수와 짝수의 갯수를 찾을겁니다.
+    count_even = 0;
+    count_odd = 0;
+    for(let i = 2; i < 101; i+=2){count_even++;}
+    for(let i = 1; i < 101; i+=2){count_odd++;}
+    
+    document.write(count_even+" ");
+    document.write(count_odd+" ");
     document.write("<hr>")
 
 </script>
