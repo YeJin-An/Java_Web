@@ -1,0 +1,45 @@
+<!-- EX02_js_switch_test.html -->
+
+<script>
+    
+    // 1 ~ 12
+    let month = Math.floor((Math.random()*12)+1);
+
+    console.log(month);
+
+    switch(month){
+        case ((month > 7 && month%2 == 0) || (month <= 7 && month%2 != 0)):
+            console.log(month+"월은 31일까지 있습니다.");
+            break;
+        case (month == 2 ):
+            console.log(month+"월은 28일까지 있습니다.");
+            break;
+        default:
+            console.log(month+"월은 30일까지 있습니다.");
+            break
+    }
+
+    // 성적 랜점값 : 0 ~ 100
+    // [Javascript] 반올림(round), 올림(ceil), 내림(floor) 
+    let score = Math.floor((Math.random()*100)+1);
+
+    console.log(score);
+
+    switch (score) {
+        case ((90 <= score) && (score <= 100)) :
+            document.write("해당 점수 '"+score+"' 의 학점은 A입니다");
+            break;
+        case ((80 <= score) && (score < 90)) :
+            document.write("해당 점수 '"+score+"' 의 학점은 B입니다");
+            break;
+        case ((70 <= score) && (score < 80)) :
+            document.write("해당 점수 '"+score+"' 의 학점은 C입니다");
+            break;
+        case ((60 <= score) && (score < 70)) :
+            document.write("해당 점수 '"+score+"' 의 학점은 D입니다");
+            break;
+        default:
+            document.write("해당 점수 '"+score+"' 의 학점은 F입니다");
+            break;
+    }
+</script>
