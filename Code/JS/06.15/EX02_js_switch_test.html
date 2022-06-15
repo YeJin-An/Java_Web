@@ -7,17 +7,19 @@
 
     console.log(month);
 
-    switch(month){
+    switch(1 <= month <= 12){
         case ((month > 7 && month%2 == 0) || (month <= 7 && month%2 != 0)):
-            console.log(month+"월은 31일까지 있습니다.");
+            document.write(month+"월은 31일까지 있습니다.");
             break;
         case (month == 2 ):
-            console.log(month+"월은 28일까지 있습니다.");
+            document.write(month+"월은 28일까지 있습니다.");
             break;
         default:
-            console.log(month+"월은 30일까지 있습니다.");
+            document.write(month+"월은 30일까지 있습니다.");
             break
     }
+
+    document.write("<br>");
 
     // 성적 랜점값 : 0 ~ 100
     // [Javascript] 반올림(round), 올림(ceil), 내림(floor) 
@@ -25,7 +27,7 @@
 
     console.log(score);
 
-    switch (score) {
+    switch (1 <= score <= 100) {
         case ((90 <= score) && (score <= 100)) :
             document.write("해당 점수 '"+score+"' 의 학점은 A입니다");
             break;
