@@ -2,7 +2,7 @@
 
 <script>
 
-    // 1 ~ 10까지 더해지는 반보문을 작성해주세요
+    // 1 ~ 10까지 더해지는 반복문을 작성해주세요
 
     // 1. 변수 선언 과정
     let sum = 0;
@@ -34,6 +34,27 @@
     console.log("while문 합계 : " + sum2);
 
     // 반복횟수, 시작할값
+    // 0 ~ 100 : 짝수와 홀수
 
+    let count = 0;
+    let count_even = 0;
+    let count_odd = 0;
+    let even = [];
+    let odd = [];
+    // 변수를 초기화 하지않고 계산식에 이용할 경우
+    // undefined 에 계산을 하는 것으로 인식되기때문에 에러 발생
 
+    while(count < 101){
+        if(count % 2 == 0){even.push(count);}
+        else if(count % 2 != 0){odd.push(count);}
+        else{stack.push("값이 이상합니다.")}
+        count++;}
+
+    for (let i = 0; i < even.length; i++){count_even += even[i];}
+    for (let i = 0; i < odd.length; i++){count_odd += odd[i];}
+    
+    console.log("even의 갯수는 "+even.length+" : "+ even);
+    console.log("even의 합계 "+ count_even);
+    console.log("odd의 갯수는 "+odd.length+" : "+ odd);
+    console.log("odd의 합계 "+ count_odd);
 </script>
