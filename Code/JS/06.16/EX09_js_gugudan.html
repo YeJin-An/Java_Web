@@ -1,0 +1,51 @@
+<!-- EX09_js_gugudan.html -->
+
+<script>
+
+    // 0. updown 의 경우 사용자의 입력한 값으면 범위 줄여주기 (*)
+
+    // 1. 사용자에게 값을 입력받아서 구구단을 출력
+    //    총 5번 출력
+
+    // 2. 값을 2개 받아서 몇단의 곱하는 갯수 까지 입력
+    //    3, 5  >> 3*1 ~ 3*5 보여주기
+    //    9, 19 >> 9*1 ~ 9*19
+    //    * 첫글자가 0이면 종료, 아니라면 무한 반복
+
+    // 0.
+    let correct_problem = Math.floor((Math.random()*101)+1);
+    let first = 0;
+    let second = 100;
+
+    for(let i = 0; true; i++){
+        let correct_usrNum
+        = Number(prompt("UPDOWM \n "+ first + "~" + second +"중에 정답이 있습니다. \n 숫자를 입력해주세요."));
+
+        if(correct_problem == correct_usrNum ){
+            console.log("정답입니다.");
+            break;
+            // i = 5; 반복조건을 "강제로" 거짓으로 만들어주는 방법.
+        }else if(correct_problem > correct_usrNum){
+            console.log("정답이 더 큽니다.");
+            first = correct_usrNum;
+        }else if(correct_problem < correct_usrNum){
+            console.log("정답이 더 작습니다.");
+            second = correct_usrNum;
+        }else{
+            console.log("숫자를 입력해주세요.");
+        }
+    }
+
+
+    // 1.
+    let user = Number(prompt("구구단의 단을 입력하세요."));
+    for(let i =0; i < 10; i++){console.log(user+"*"+i+"="+user*i);}
+
+    //2.
+    let user_th = Number(prompt("구구단의 단을 입력하세요."))
+    let user_fo = Number(prompt("구구단의 서브 요소를 입력하세요"));
+    for(let i = 0; i <= user_fo; i++){
+        if(user_th == 0){break;}
+        console.log(user_th+"*"+i+"="+user_th*i);}
+
+</script>
