@@ -17,5 +17,26 @@
     document.write("<hr>")
     for(let i = 1; i < 10; i++){document.write(number+" x "+i+" = "+number*i+"<br>");}
 
+    // 2. 0 ~ 100 배수 < 
+    //    2의 배수이면서 7의 배수
+    //    배수 더한값 1
+    //    배수 곱한값 1
+    //    배수 갯수 1
+
+    // 한번의 반복문 > 배수의 숫자도 보여주는 코딩으로 변경
+    
+    let sum = 0;
+    let mul = 1;
+    let count = 0;
+
+    for(let i = 0; i < 101; i+=14){
+        sum += i;
+        count++;
+        if(i != 0){mul *= i;}
+    }
+
+    console.log(sum);
+    console.log(mul);
+    console.log(count);
 
 </script>
