@@ -41,12 +41,14 @@
 
     let correct_problem = Math.floor((Math.random()*101)+1);
 
-    for(let i = 0; i < 5; i++){
+    for(let i = 0; true; i++){
         let correct_usrNum
         = Number(prompt("UPDOWM \n 1 ~ 100 중에 정답이 있습니다. \n 숫자를 입력해주세요."));
     
         if(correct_problem == correct_usrNum ){
             console.log("정답입니다.");
+            break;
+            // i = 5; 반복조건을 "강제로" 거짓으로 만들어주는 방법.
         }else if(correct_problem > correct_usrNum){
             console.log("정답이 더 큽니다.");
         }else if(correct_problem < correct_usrNum){
