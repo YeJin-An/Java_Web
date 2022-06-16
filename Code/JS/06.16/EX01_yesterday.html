@@ -58,19 +58,21 @@
     // 절대값
     let num1 = 50;
     let num2 = 100;
+    var diff = 0;
     var diff_num12 = 0;
     var diff_num34 = 0;
     // 두수의 거리에 대해서 절대값으로 표현
     // 삼항연산자
     (num1-num2 < 0) ? diff_num12= -(num1-num2) : diff_num12 = (num1-num2);
+    diff = (num1 > num2) ? num1 - num2 : num2 - num1;
     console.log(diff_num12);
     
     let num3 = 17;
     let num4 = 10;
     // 두수의 거리에 대해서 절대값으로 표현
     // 삼항연산자
-    
     (num3-num4 < 0) ? diff_num34 = -(num3-num4) : diff_num34 = (num3-num4);
+    diff = (num3 > num4) ? num3 - num4 : num4 - num3;
     console.log(diff_num34);
 
 </script>
