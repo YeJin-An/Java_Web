@@ -22,7 +22,7 @@
 
     /* 2. 100 ~ 1 출력하는 while, dowhile */
     // 2-1
-    while(0 <= while_two  <= 100){
+    while(0 <= while_two <= 100){
         console.log(while_two--);
         if(while_two < 1){break;}}
     // 2-2
@@ -42,12 +42,11 @@
 
 
     /* 4. 3배수이면서 4배수인것 / 1 ~ 50 / hab gob cnt */ 
-    while(cnt < 51){
+    while(cnt++ < 51){
         if((cnt % 3 ==0) && (cnt % 4 == 0)){
             hab += cnt;
             gob *= cnt;
         }
-        cnt++;
     }
     console.log(hab);
     console.log(gob);
