@@ -1,0 +1,62 @@
+<!-- EX08_js_updown.html -->
+
+<script>
+
+    // 규칙
+    // 1. 정답
+    // 2. 정답을 맞추기위한 입력한 값
+    // 3. 정답과 입력한 값 비교
+    // 4. 비교한 결과를 보여주기
+    // 5. 같은지, 다른지(높은지 낮은지)
+
+    // 반복은 몇번부터 몇번까지 ?  2 ~ 5, 기회를 5번주도록 합시다.
+    // 종료는 언제 해야할까? 5번다 끝나거나 정답을 맞추거나
+
+    // 1. 정답을 표현할 방법
+    let correct = 10;
+    let cnt = 0;
+
+    
+    for(let i =0; i < 5; i++){
+        let userNum = Number(prompt("UPDOWM Game \n 1 ~ 100 중에 정답이 있습니다. \n 숫자를 입력해주세요"));
+        switch(true){
+            case cnt < 5:
+                if(correct == userNum){
+                    console.log("정답입니다.");
+                }else if(correct < userNum){
+                    console.log("입력한 값보다 낮습니다.");
+                    cnt ++;
+                }else{
+                    console.log("입력한 값보다 큽니다");
+                    cnt ++;
+                } break;
+            case cnt == 5:
+                console.log("제한횟수를 초과하였습니다. \n 정답은 : "+correct+"입니다.");
+                break;}
+    }
+
+    // 추가해야할 부분
+    // 1. 정답이 10으로 고정되어있다라는것 <
+    // 2. 정답이 있으면 
+
+    let correct_problem = Math.floor((Math.random()*101)+1);
+
+    for(let i = 0; i < 5; i++){
+        let correct_usrNum
+        = Number(prompt("UPDOWM \n 1 ~ 100 중에 정답이 있습니다. \n 숫자를 입력해주세요."));
+    
+        if(correct_problem == correct_usrNum ){
+            console.log("정답입니다.");
+        }else if(correct_problem > correct_usrNum){
+            console.log("정답이 더 큽니다.");
+        }else if(correct_problem < correct_usrNum){
+            console.log("정답이 더 작습니다.");
+        }else{
+            console.log("숫자를 입력해주세요.");
+        }
+    }
+
+
+
+
+        </script>
