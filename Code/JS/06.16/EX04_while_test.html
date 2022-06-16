@@ -2,12 +2,12 @@
 
 <script>
 
-    let while_one = 1;
+    let while_one = 0;
     let while_two = 100;
-    let while_three = 2;
+    let while_three = 0;
 
     let dowhile_two = 100;
-    let dowhile_three = 2;
+    let dowhile_three = 0;
 
     let hab = 0;
     let gob = 1;
@@ -23,27 +23,22 @@
     /* 2. 100 ~ 1 출력하는 while, dowhile */
     // 2-1
     while(0 <= while_two  <= 100){
-        console.log(while_two);
-        while_two--;
+        console.log(while_two--);
         if(while_two < 1){break;}}
     // 2-2
     do{
-        console.log(dowhile_two);
-        dowhile_two--;
+        console.log(dowhile_two--);
         if(dowhile_two < 1){break;}
     }while(dowhile_two < 100)
 
 
     /* 3. 2 4 6 8 10 출력하는 while, dowhile */
     // 3-1.
-    while(while_three < 11){
-        console.log(while_three);
-        while_three += 2;}
+    while(while_three < 10){console.log(while_three += 2);}
     // 3-2.
     do{
-        console.log(dowhile_three);
-        dowhile_three += 2;
-    }while(dowhile_three < 11)
+        console.log(dowhile_three += 2);
+    }while(dowhile_three < 10)
 
 
     /* 4. 3배수이면서 4배수인것 / 1 ~ 50 / hab gob cnt */ 
