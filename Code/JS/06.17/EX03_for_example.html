@@ -12,7 +12,7 @@
 
     // 직각삼각형 += 1
     for(let i = 0; i < 5; i++){
-        for(let j = 0; j < 5; j++){
+        for(let j = 0; j <= i; j++){
             document.write("*");
         }
         document.write("<br>");
@@ -21,8 +21,8 @@
 
 
     // 직각삼각형 -= 1
-    for(let i = 0; i < 5; i++){
-        for(let j = 0; j <= i; j++){
+    for(let i = 0; i < 5; i++){  // for(let j = 6-i; j > 0; j--)
+        for(let j = 5; i < j; j--){
             document.write("*");
         }
         document.write("<br>");
@@ -46,17 +46,17 @@
     document.write("<hr>");
 
     // 피라미드 만들기 #1 _ 답지_1
-    for (a = 0; a < 5; a++) // for (a = 5; a > 0; a--) 
-                            // for (a = num -1; a > 0; a--)_입력받기 
-	{
-		for (b = a; b <= 5-1; b++) {
-			printf(" ");
-		}
-		for (c = 0; c <=(a*2); c++) {
-			printf("*");
-		}
-		printf("\n");
-	}
+    // for (a = 0; a < 5; a++) // for (a = 5; a > 0; a--) 
+    //                         // for (a = num -1; a > 0; a--)_입력받기 
+	// {
+	// 	for (b = a; b <= 5-1; b++) {
+	// 		printf(" ");
+	// 	}
+	// 	for (c = 0; c <=(a*2); c++) {
+	// 		printf("*");
+	// 	}
+	// 	printf("\n");
+	// }
     /*
         // pyramid
         1. for문을 통하여 1 ~ 5까지 출력이 되어있는 상태이다.
@@ -68,7 +68,7 @@
     */
 
     /*  
-        // pyramid += 1 + pyramid -= 1
+        // pyramid += 1 + pyramid 
         for (int i = 5; i >= 0; i--)의 경우
         printf(" ")의 경우 i의 값이 5인데, 조건이 j < 5 인 경우
         조건에 부합하지 않아 공백문자가 먹히지 않습니다.
