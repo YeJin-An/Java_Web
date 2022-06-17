@@ -74,5 +74,28 @@
         조건에 부합하지 않아 공백문자가 먹히지 않습니다.
         따라서 피라미드의 확장 버전의 마름모를 그리기에 수월한 부분이 존재한다.
     */
+
+    for (int i = 0; i < 5; i++) {
+		for (int j = i; j < 5; j++) {
+			printf(" ");
+		}
+		for (int c = 0; c <= (i * 2); c++) {
+			printf("*");
+		}
+
+		printf("\n");
+	}
+
+
+	for (int i = 5; i >= 0; i--) {
+		for (int j = i; j < 5 ; j++) {
+			printf(" ");
+		}
+		for (int c = 0; c <= (i * 2); c++) {
+			printf("*");
+		}
+
+		printf("\n");
+	}
     
 </script>
