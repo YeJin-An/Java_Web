@@ -1,0 +1,28 @@
+<!-- EX04_for_active.html -->
+
+<script>
+
+// 5
+for(let i = 1; i < 6; i++){  
+        document.write(i)
+        for(let z = 1; z <= i; z++){ 
+            document.write(z);
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+
+//6
+for(let i = 1; i <= 5; i++){  // (let i = 0; i < 5 ; i++)
+    document.write('5');
+    for(let j = 4; i <= j; j--){  // (let j = 5; j > i; j--)
+        document.write(j);
+    }
+    // for(let j = 4; j >= i; j--){
+    //     document.write(j);
+    // } 
+    document.write("<br>");
+}
+document.write("<hr>");
+
+</script>
