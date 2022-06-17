@@ -1,0 +1,68 @@
+<!-- EX03_for_example.html -->
+
+<script>
+    // 반복문 을 쓴 이유 : 코드를 반복적으로 쓰지 않기 위해서입니다.
+
+    // 사각형 만들기
+    for(let i = 0; i < 5; i++){
+        document.write("********<br>");
+    }
+    document.write("<hr>");
+
+
+    // 직각삼각형 += 1
+    for(let i = 0; i < 5; i++){
+        for(let j = 0; j < 5; j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+
+
+    // 직각삼각형 -= 1
+    for(let i = 0; i < 5; i++){
+        for(let j = 0; j <= i; j++){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+
+
+    
+    // 피라미드 만들기 #1
+    for(let i = 0; i < 5; i++){
+        for(let j = 5; i < j; j--){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+
+    // 피라미드 만들기 #1 _ 망한 버전_1
+    for(let i = 0; i < 5; i+=2){
+        for(let z = 2; z > 0; z--){
+            document.write(" ");
+        }
+        for(let j = 0; j <= i; j+=1){
+            document.write("*");
+        }
+        document.write("<br>");
+    }
+    document.write("<hr>");
+
+    // 피라미드 만들기 #1 _ 답지_1
+    for (a = 0; a < 5; a++) // for (a = 5; a > 0; a--) 
+                            // for (a = num -1; a > 0; a--)_입력받기 
+	{
+		for (b = a; b <= 5-1; b++) {
+			printf(" ");
+		}
+		for (c = 0; c <=(a*2); c++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+    
+</script>
