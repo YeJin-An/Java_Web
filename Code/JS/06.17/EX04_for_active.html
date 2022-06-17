@@ -43,7 +43,7 @@ for(let i = 0; i < 9; i++){
     변하는 수들을 이용한 횟수 설정연습
 */
 
-// 8
+// 8 #1
 for(let i = 0; i < 9; i++){
     document.write('1');
     if(i <= 4){
@@ -57,7 +57,28 @@ for(let i = 0; i < 9; i++){
     }
 }document.write("<hr>")
 
-// 9
+// 8 #2
+let num = 3;
+for(let i = 1; i < 10; i++){
+    if(i <= 5){
+        for(let j = 1; j <= i; j++){
+        document.write(j)}
+        document.write("<br>")
+    }else{
+        // i = 6 : 4번 반복 : 1 2 3 4 >> 4 3 2 1
+        // i = 7 : 3번 반복 : 1 2 3   >> 4 3 2
+        // i = 8 : 2번 반복 : 1 2
+        // i = 9 : 1번 반복 : 1
+        // 6-6, 7-6, 8-6, 9-6  = i-6
+        //  4 ,  3 ,  2 ,  1   = z
+        for(let z = 4; z > i-6; z--){  
+        // document.write((i-z)-4+num)
+        document.write(5-z)}
+        document.write("<br>")
+    }
+}document.write("<hr>")
+
+// 9 #1
 for(let i = 0; i < 9; i++){
     if(i <= 4){
         for(let z = 3; z < 8-i; z++){  // let j = 8; j >= i; j--
@@ -65,6 +86,27 @@ for(let i = 0; i < 9; i++){
             document.write("<br>")
     }else{
             for(let j = 3; j < i; j++){
+            document.write("*")}
+            document.write("<br>")
+        }
+}document.write("<hr>");
+
+// 9 #2
+for(let i = 0; i < 9; i++){
+    document.write(i);
+    if(i < 5){
+        for(let z = 5; z > i; z--){  
+            // i = 0; z = 5; z > 0 
+            // i = 0; z = 5; z > 1 
+            document.write("*")}
+            document.write("<br>")
+    }else{
+            // i = 5 ; 2번 실행 j = 0 1
+            // i = 6 ; 3번 실행 j = 0 1 2
+            // i = 7 ; 4번 실행 j = 0 1 2 3
+            // i = 8 ; 5번 실행 j = 0 1 2 3 4
+            // 5 - 3
+            for(let j = 0; j < i-3; j++){
             document.write("*")}
             document.write("<br>")
         }
