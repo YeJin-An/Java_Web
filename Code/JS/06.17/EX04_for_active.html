@@ -22,8 +22,7 @@ for(let i = 1; i <= 5; i++){  // (let i = 0; i < 5 ; i++)
     //     document.write(j);
     // } 
     document.write("<br>");
-}
-document.write("<hr>");
+}document.write("<hr>");
 
 //7
 for(let i = 0; i < 9; i++){
@@ -37,6 +36,38 @@ for(let i = 0; i < 9; i++){
         document.write("*")}
         document.write("<br>")
     }
+}document.write("<hr>")
+
+/*
+    반복내에서 사용하는 변수, 사용하기위해 만들어야할 변수
+    변하는 수들을 이용한 횟수 설정연습
+*/
+
+// 8
+for(let i = 0; i < 9; i++){
+    document.write('1');
+    if(i <= 4){
+        for(let j = 0; j < i; j++){
+        document.write(j+2)}
+        document.write("<br>")
+    }else{
+        for(let z = 0; z < 8-i; z++){  // let j = 8; j >= i; j--
+        document.write(z+2)}
+        document.write("<br>")
+    }
+}document.write("<hr>")
+
+// 9
+for(let i = 0; i < 9; i++){
+    if(i <= 4){
+        for(let z = 3; z < 8-i; z++){  // let j = 8; j >= i; j--
+            document.write("*")}
+            document.write("<br>")
+    }else{
+            for(let j = 3; j < i; j++){
+            document.write("*")}
+            document.write("<br>")
+        }
 }
 
 </script>
