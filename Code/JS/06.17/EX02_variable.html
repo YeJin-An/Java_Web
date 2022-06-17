@@ -26,6 +26,7 @@
         console.log("for_i : "+i);
         let b = 100;
         console.log("for_b : "+b);
+        
     }
     
     // 변수 선언 및 초기화(대입, 할당) > 변수생성이 필요할경우 최상단에 작성하는 것이 좋음.
@@ -51,7 +52,13 @@
         console.log(test_local);
         // 지역변수를 비어있는 전역변수에게 대입
         test_global = test_local;
-    }
+    } console.log(test_global);
 
-    console.log(test_global);
+    // 호이스팅
+    // : 전역변수와 지역변수의 이름이 같아도 변수 선언이 가능합니다
+    // 컴퓨터는 전역변수와 지역변수를 구분할 수 없기 때문에 지역변수로 인식을 해버립니다. 
+    //          > 에러발생 > 해결방법은 존재
+
+
+
 </script>
