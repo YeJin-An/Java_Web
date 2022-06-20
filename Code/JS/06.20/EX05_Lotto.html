@@ -1,0 +1,42 @@
+<!-- EX05_Lotto.html -->
+
+<script>
+
+    // 1. 랜덤한 숫자 1 ~ 45 * 6 : 중복 무시
+    // 배열을 생성 + 1 ~ 45 랜덤한 숫자 : 로또번호
+    let lotto = [];
+    for (let i = 0; i < 6; i++ ){lotto.push((Math.floor(Math.random()*45))+1);}
+    console.log(lotto);
+
+    // 2. 사용자가 입력한 숫자 1 ~ 45 * 6 : 중복 무시
+    // 배열을 생성 + 1 ~ 45 랜던함 숫자 : 사용자 입력번호
+
+    let user = [];
+    for(let i = 0; i < 6; i++){
+        let userI = Number(prompt("사용자 숫자 입력"));
+        user.push(userI)}
+
+    console.log(user);
+
+    // 3. 1번의 숫자와 2번의 숫자를 비교
+    // * 중요한 부분
+    // 반복문 두개 + if문
+
+    let result_right = 0;
+    for(let i = 0; i < 6; i++){
+        for(let j = 0; j < 6; j++){
+            if(lotto[j] == user[i]){result_right++;}
+        }
+    }
+
+    // 4. 결과 출력 대상
+    //     1. 맞춘 갯수
+    console.log(result_right.length);
+    //     2. 컴퓨터랜점숫자
+    console.log(lotto);
+    //     3. 사용자입력숫자
+    console.log(user);
+
+    // * . 중복제거, 정렬, 보너스 숫자는 제외
+
+</script>
