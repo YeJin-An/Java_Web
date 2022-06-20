@@ -10,11 +10,12 @@
         // 선언된 숫자를 배열에 등록하는 문장
         lotto[i] = ((Math.floor(Math.random()*45))+1);
 
-        // if(lotto[i] == lotto[i]){
-        //     lotto.pop();
-        //     i--; // 숨겨진 키워드
-        // }
-        
+        for(let j = 0; j < i; j++){
+        if(lotto[i] == lotto[i]){
+            lotto.pop();
+            i--; // 숨겨진 키워드
+            }
+        }
     }
     console.log(lotto);
     
@@ -32,7 +33,6 @@
                 lotto[j+1] = tmp;
             }
         }
-<<<<<<< HEAD
     }console.log(lotto);
     
     // function(a,b){return a-b;}
@@ -40,11 +40,10 @@
     // a - b : " - " 사칙연산을 사용하면 자동으로 숫자형을 자동 변경
     // a - b : 양수( + ) : a가 더 크다 : 고로 변경
     // a - b : 음수( - ) : a가 작다 : 고로 변경안함.
-=======
-    }
+
+
 
     console.log(lotto);
->>>>>>> 86b3f782a7c83282a53fb11a0982b706ad597e3f
 
 
 
