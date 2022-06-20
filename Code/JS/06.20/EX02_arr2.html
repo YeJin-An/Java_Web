@@ -6,14 +6,14 @@
     let sum = 0;
 
     // 사용자에게 입력받기
+    while(true){
+        let usrNum = Number(prompt("국어 점수를 입력해주세요"));
 
-    let usrNum1 = Number(prompt("국어 점수를 입력하세요"))
-    let usrNum2 = Number(prompt("수학 점수를 입력하세요"))
-    let usrNum3 = Number(prompt("영어 점수를 입력하세요"))
-
-    jumsu[0] = usrNum1;
-    jumsu[1] = usrNum2;
-    jumsu[2] = usrNum3;
+        if (usrNum == 0){
+            break;
+        }
+        jumsu.push(usrNum);
+    }
 
 
     // sum = 70 + 80 + 90
@@ -23,7 +23,8 @@
         sum += jumsu[i];
     }
 
-    console.log(sum);
-    console.log(Math.floor(sum/jumsu.length));
+    console.log("입력한 점수 : [ " + jumsu + " ]");
+    console.log("점수 합산 : " + sum);
+    console.log("점수 평균 : " + Math.floor(sum/jumsu.length));
 
 </script>
