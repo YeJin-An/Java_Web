@@ -6,17 +6,21 @@
     // 배열을 생성 + 1 ~ 45 랜덤한 숫자 : 로또번호
     let lotto = [];
     for (let i = 0; i < 6; i++ ){
-        // 랜덤한 숫자로 선언하는 문장, 선언된 숫자를 배열에 등록하는 문장
-        lotto.push((Math.floor(Math.random()*45))+1);
 
-        for(let j = 0; j < i; j++){
-            if(lotto[j] == lotto[i]){
-                lotto.pop();
-                i--; // 숨겨진 키워드
-            }
+        // 선언된 숫자를 배열에 등록하는 문장
+        lotto[i] = ((Math.floor(Math.random()*45))+1);
+
+        if(lotto[j] == lotto[i]){
+            lotto.pop();
+            i--; // 숨겨진 키워드
         }
+        
     }
     console.log(lotto);
+    
+ 
+
+
 
     // 2. 사용자가 입력한 숫자 1 ~ 45 * 6 : 중복 무시
     // 배열을 생성 + 1 ~ 45 랜던함 숫자 : 사용자 입력번호
