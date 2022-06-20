@@ -10,15 +10,31 @@
         // 선언된 숫자를 배열에 등록하는 문장
         lotto[i] = ((Math.floor(Math.random()*45))+1);
 
-        if(lotto[j] == lotto[i]){
-            lotto.pop();
-            i--; // 숨겨진 키워드
-        }
+        // if(lotto[i] == lotto[i]){
+        //     lotto.pop();
+        //     i--; // 숨겨진 키워드
+        // }
         
     }
     console.log(lotto);
     
- 
+    // 정렬 : 컴퓨터의 대입방식에 대래서 생각해주셔야합니다.
+    // 컴퓨터에서는 값을 저장할때 기존에 있는 값을 덮어씌웁니다.
+    // 프로그래밍에서는 정렬시에 값을 옮기는 것을 도와주기 위한 변수가 필요합니다.
+    let tmp = 0;
+
+    for(let i =0; i < lotto.length; i++){
+        let tmp = 0;
+        for( let j = 0; j < lotto.length-1; j++){
+            if(lotto[j] > lotto[j+1]){
+                tmp = lotto[j];
+                lotto[j] = lotto[j+1];
+                lotto[j+1] = tmp;
+            }
+        }
+    }
+
+    console.log(lotto);
 
 
 
