@@ -1,0 +1,42 @@
+<!-- EX05_Lotto.html -->
+
+<script>
+
+    let lotto = [];
+
+    for(let i = 0; i < 6; i++){
+        lotto.push(Math.floor(Math.random()*45)+1);
+
+        for(let j = 0; j < i; j++){
+            if(lotto[j] == lotto[i]){
+                i--;
+            }
+        }
+    }
+    
+    let tmp = 0;
+    for(let i = 0; i < lotto.length-1; i++){
+        tmp = lotto[i]
+        lotto[i] = lotto[i+1];
+        lotto[i+1] = tmp;
+    }
+
+    let usr_num = [];
+    for(let i = 0; i < lotto.length-1; i++){
+        usr_num.push(Number(prompt("입력할 숫자 입력")));
+        for(let j = 0; j < i; j++){
+            if(lotto[j] == lotto[i]){
+                i--;
+            }
+        }
+    }
+
+    let cnt = 0;
+    for( let i = 0; i < lotto.length; i++){
+        for(let j = 0; j > lotto.length; j++ )
+        if(lotto[j] == lotto[i]){
+            cnt ++;
+        }
+    }
+
+</script>
