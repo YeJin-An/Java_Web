@@ -1,0 +1,69 @@
+<!-- EX01_DiceGame.html -->
+
+<script>
+
+    // myMoney = 내가 가진 돈 ( 나중에 사용자에게 입력받도록 변경 )
+    let myMoney = 4;
+
+    // enterMoney = 게임 참가비 ( 나중에 사용자에게 입력받도록 변경 )
+    let enterMoney = 5;
+
+
+    // 1. 게임 참가를 할것이냐 ? ( Y / N )
+    let userYn = confirm("게임 참가를 할것이나 ?");
+    console.log(userYn);
+
+    // 2. 사용자의 가진돈을 보고 5원보다 높으면 진행 / 낮으면 돈없다고 실패
+    if(myMoney < enterMoney){userYn = false;}
+    else{userYn = true;}
+    // 2-1. 대출하듯이 돈여부 보고 얼마 더 빌릴수 있도록 해주세요.
+    if(myMoney < enterMoney){
+        let ResultMoney = confirm(enterMoney-myMoney+"만큼 빌릴 것인가?");
+        if(ResultMoney == true){myMoney = (enterMoney - myMoney) + myMoney}
+        else{userYn = false;}}
+    else{userYn = true;}
+
+    // 3. 컴퓨터가 주사위를 5번 굴립니다. (중복가능, 정렬)
+    let Dice = [];
+    for(let i = 0; i < 6; i++){
+        Dice.push(Math.floor(Math.random()*6)+1);
+
+        for(let j = 0; j < Dice.length-1; j++){
+            let tmp = 0;
+            tmp = Dice[j];
+            Dice[j] = Dice[j+1];
+            Dice[j+1] = tmp;
+        }
+    }
+    // 4. 사용자가 주사위를 맞출 것
+    let UsrNum = [];
+    for(let i = 0; i < Dice.length; i++){
+        UsrNum.push(Number(prompt("주사위를 입력 > ")));
+
+        for(let j = 0; j < Dice.length-1; j++){
+            let tmp = 0;
+            tmp = UsrNum[j];
+            UsrNum[j] = UsrNum[j+1];
+            UsrNum[j+1] = tmp;
+        }
+    } 
+    // 5. 맞춘 주사위 값 * 2 투자급 돌려주기
+    let cnt_right = 0;
+    for(let i = 0; i < Dice.length; i++ ){
+        for(let j = 0; j < Dice.length-1; j++){
+            if(Dice[j] == UseNum[i]){
+                cnt_right++;
+            }
+        }
+    }
+    cnt_right *= enterMoney;
+
+    // 사용자가 게임을 하면 참가비 5원을 내야하며
+    // 5원이 없으면 게임시작실패 or 대출(가능한사람만)
+    
+    // 게임시작되면
+    // 소지금 -5 해야하고, 사용자가 주사위번호 선택
+    // 컴퓨터가 주사위 5번 한번에 굴리기
+    // 나온 주사위 번호중 사용자의 주사위번호랑 같은 갯수만큼 *2로 고지금 올려주기
+    
+</script>
