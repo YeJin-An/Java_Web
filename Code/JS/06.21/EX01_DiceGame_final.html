@@ -1,0 +1,70 @@
+<!-- EX01_DiceGame.html -->
+
+<script>
+
+    // 사용자가 게임을 하면 참가비 5원을 내야하며
+    // 5원이 없으면 게임시작실패 or 대출(가능한사람만)
+    
+    // 게임시작되면
+    // 소지금 -5 해야하고, 사용자가 주사위번호 선택
+    // 컴퓨터가 주사위 5번 한번에 굴리기
+    // 나온 주사위 번호중 사용자의 주사위번호랑 
+    // 같은 갯수만큼 *2로 고지금 올려주기
+
+    let myMoney = 4;
+    let enterMoney = 5;
+
+    let UserYn = confirm("게임 참가를 할것인가?");
+
+    if(userYn = true){
+        if(myMoney < enterMoney){
+        let ResultMoney = confirm(enterMoney-myMoney+"만큼 빌릴 것인가?");
+        if(ResultMoney == true){myMoney = (enterMoney - myMoney) + myMoney
+            if(ResultMoney == true){
+                myMoney -= enterMoney;
+    
+                let Dice = [];
+                let UsrNum = [];
+                for(let i = 0; i < 6; i++){
+                    Dice.push(Math.floor(Math.random()*6)+1);
+                    UsrNum.push(Number(prompt("주사위를 입력 > ")));
+    
+                    for(let j = 0; j < Dice.length-1; j++){
+                    let tmp_Dice = 0;
+                    tmp_Dice = Dice[j];
+                    Dice[j] = Dice[j+1];
+                    Dice[j+1] = tmp_Dice;
+    
+                    let tmp_UserNum = 0;
+                    tmp_UserNum = UsrNum[j];
+                    UsrNum[j] = UsrNum[j+1];
+                    UsrNum[j+1] = tmp_UserNum;
+                    }
+                }
+    
+                let cnt_right = 0;
+                for(let i = 0; i < Dice.length; i++ ){
+                    for(let j = 0; j < Dice.length-1; j++){
+                        if(Dice[j] == UsrNum[i]){
+                            cnt_right++;
+                        }
+                    }
+                }
+                cnt_right *= enterMoney;
+        
+                console.log(cnt_right);
+        
+        }
+        else{document.write("게임시작이 안됩니다.");}}
+        else{myMoney -= enterMoney;}
+
+
+        }else{
+            document.write("다시 재 호출을 부탁합니다.");
+        }
+        
+    }else{
+        document.write("게임에 참여되지 않았습니다.");
+    }
+    
+</script>
