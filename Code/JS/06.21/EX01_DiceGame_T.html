@@ -1,0 +1,96 @@
+<!-- EX01_DiceGame.html -->
+
+<script>
+
+    // 사용자에 대한 정보
+    let myMoney = 10; // 소지금
+
+    // 게임애 대한 정보
+    let enterMoney = 3; // 참가비
+    let usrPick = 0; // 사용자가 입력하는 숫자
+    let rand_Dice = [] ; // 주사위 값을 가질 배열
+    let count = 0; // 맞춘 갯수 정보
+
+    // 게임흐름에 대한 정보
+    // 게임 시작 여부
+    let userBool = confirm("게임을 참가하시겠습니까 ?");
+
+    console.log(userBool);
+    console.log(typeof userBool);
+
+    // if 확인 일경우 한다.
+    // else 안한다
+
+    // 1번케이스
+    // 못한다 ( 참가비 > 소지금 )
+    // 한다 ( 확인 )
+    // 안한다 ( 안한다. )
+
+    // 2번케이스
+    // 한다 ( 확인 )
+        // 못한다 ( 참가비 > 소지금 )
+    // 안한다 ( 안한다. )
+
+    // #1
+    // if(usrBool){
+    //     if(myMoney < enterMoney){
+    //         console.log("참가비가 없습니다.");
+    //     }else{
+        
+    //     }
+    // }else{
+    //     console.log("게임을 종료하겠습니다.");
+    // }
+
+    // #2
+    if(usrBool && myMoney >= enterMoney){
+        // 게임 시작하는 부분
+
+        // let usrPick ; // 사용자가 입력하는 숫자
+        // let rand_Dice ; // 주사위 값을 가질 배열
+        // let count; // 맞춘 갯수 정보
+
+        // 게임이 시작되면 사용자에게 숫자 입력받기
+        userPick = Number(prompt("주사위를 숫자를 입력하세요."));
+
+        // 주사위 굴려서 랜덤숫자 만들어놓기
+        for(let i =0; i < 5; i++){
+            rand_Dice[i] = Math.floor((Math.random()*6)+1);
+        }
+
+        // 비교
+        for(let i = 0; i < 5; i++){
+            if( rand_Dice[i] == usrPick ){
+                count++;
+            }
+        }
+
+        // 소지금, 참가비, 맞춘 갯수, 정답, 선택한 숫자
+        // 계산 및 결과 출력
+        myMoney = myMoney - enterMoney;
+        myMoney = myMoney + (count*2);
+
+        console.log("=====================================");
+
+        console.log("랜덤 주사위 결과는 " + rand_Dice + " 입니다.");
+        console.log("선택한 숫자는 " + usrPick + " 입니다.");
+
+        console.log("맞춘 갯수는 " + count + " 입니다.");
+        console.log("번 돈은 " + count * 2 + "만원 입니다.");
+        console.log("현재 소지금은 " + myMoney + "만원 있습니다.");
+
+        console.log("=====================================");
+                
+
+
+
+    }else if(usrBool && myMoney < enterMoney){
+        console.log("참가비가 없습니다.");
+
+    }else{
+        console.log("게임을 종료하겠습니다.");
+    }
+    
+    // 게임결과에 대한 정보
+    
+</script>
