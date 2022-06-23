@@ -1,0 +1,52 @@
+<!-- EX05_calc2.html -->
+
+<script>
+
+// ------------------------------------------------------------------------
+
+    // 사용자한테 입력 3개 ( 배열 )
+    // 3개 받은 숫자로 아까 만든 계산기 실행해서
+    // 결과 출력
+
+    let usr = [];
+    let cnt = 3;
+
+    while(cnt > 0){
+        usr.push(prompt("사용자에게 입력 받기 > "));
+        cnt --;
+    }
+
+    function usr_output(fst,sec,thir){
+
+        fst = Number(fst);
+        sec = Number(sec);
+        thir = String(thir);
+
+        let cnt = 0;
+        while(fst <= sec){
+            if(thir =='+'){ cnt += fst;}
+            else if(thir =='-'){ cnt -= fst;}
+            else if(thir =='*'){ cnt = (cnt+1)*fst;}
+            else if(thir =='/'){ cnt = (cnt+1)/fst;}
+            else{return "더 이상 연산할 수 없습니다.";}
+            fst++;
+        }
+        return cnt;
+    }
+
+    console.log(usr_output(usr[0],usr[1],usr[2]));
+
+
+// ------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------
+
+
+
+// ------------------------------------------------------------------------
+
+
+
+</script>
