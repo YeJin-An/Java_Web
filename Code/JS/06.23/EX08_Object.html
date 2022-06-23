@@ -1,0 +1,136 @@
+<!-- EX08_Object.html -->
+
+<script>
+
+    /*
+        객체 : 붕어빵틀, 실생활에서 사용하는 인식할 수 있는 사물
+        { } : 이름과 값으로 이루어진 정렬되지않은(인덱스가 없는) 집합
+            값으로는 숫자형, 문자열형, 배열형, 또다른객체, 함수 등 모든 것이 가능
+
+        변수의 자료형 > 기존에 있던 방식대로 생성하면 가장 먼저 부딪히는 문제 : 변수명
+        위의 단점을 보완하기 위한 자료형 > 배열 > 인덱스를 정확하게 알아야 원하는 값을 볼수있는 문제
+
+        배열 = [이름, 색상, 종류, 습관, 울음소리, 질병기록, ]
+        배열 = [이름, 색상, 습관, 울음소리, 질병기록, ]
+
+        객체 : { 이름 : 값 , 이름 : 값 , 이름 : 함수() .... }
+    */
+
+    let person = {
+        name : "홍길동",
+        cm : 180,
+        kg : 80,
+        addr : "수원시",
+        age : 20,
+        eat : function(){ /*실행문*/ }
+    };
+    console.log(typeof person);
+    // 객체명.이름
+    console.log(person.name);
+    console.log(person);
+
+    // 객체명.이름()
+    console.log(person.eat());
+
+//----------------------------------------------------------------------------------------------
+
+    /* 
+        객체내의 단순한 값을 가진 요소를 프로퍼티( property )
+        - 상태를 의미하는 값, 이름, 나이, 숫자 문자 불리언 등등..
+        객체내의 함수를 가진 요소를 메소드( Method )
+        - 기능을 의미하는 함수, 프로퍼티인데 함수를 가졌다는 의미로 메소드라고 부름
+
+        고양이 객체를 만드세요!
+        고양이에 대한 상태 > 프로퍼티
+        { 이름 : 값, 이름 : 값 }
+        고양이에 대한 행동 > 메소드
+        { 이름 : functon() + { \... } }
+    */ 
+
+
+    // 객체 호출 방법
+    // 객체이름.프로퍼티이름()
+    // #1
+    console.log(person.name);
+    // #2
+    console.log(person["name"]);
+
+
+    // 객체의 파라미터를 호출하는 방법
+    console.log(person.매소드);
+    console.log(person.eat());
+
+//-----------------------------------------------------------------------------------------------
+
+    // 개체속 변수
+    // 이름 : 값 > key & value, 키 와 값
+    let person2 = {
+        name : "홍길동",
+        cm : 180,
+        kg : 80,
+        addr : "수원시",
+        age : 20,
+        birthday : "681212",
+        id : "123456",
+        eat : function(){ /*실행문*/ },
+        uId : function(){
+            return this.birthday + "_" + this.id;
+        }
+    };
+
+    // [ 프로퍼티( property ) ] 
+    console.log(person2.birthday);
+    console.log(person2["birthday"]);
+    console.log(person2.id);
+    console.log(person2["id"]);
+
+    console.log(person2.uId());
+
+
+    person2.birthday = "000102"
+    console.log(person2.uId());
+
+//-----------------------------------------------------------------------------------------------
+
+    // for in / for of
+
+    // 이 배열의 index가 없다!!
+    // let key : object 안에 있는 이름값 , 임의로 만든 변수명
+    // for ( 변수명 in 객체, 배열 )
+    for (let key in person2) {
+        // console.log(key)
+        // console.log(person2[key])
+
+        console.log( key + " : " + person[key]);
+    }
+
+    // function을 이용해서 객체만들기
+    // 프로토타입(기본모습) > 생성자메소드
+    function Person(name, cm, kg, addr, age){
+        // this가 붙은 변수는 function내부의 변수에 선언한다.
+        // this가 없는 변수는 파라마터로 받은 변수
+        this.name = name;
+        this.cm = cm;
+        this.kg = kg;
+        this.addr = addr;
+        this.age = age;
+    }
+
+//---------------------------------------------------------------------------------------------
+
+    // 값이 없지만, 추가적으로 값을 넣는 경우
+    var me = new Person("길동", "180", "80" ,"수원", "20");
+    var you = new Person("enffl", "150", "100" ,"수원", "10");
+    console.log(me);
+    console.log(you);
+
+
+    // 객체에 값을 넣는 방법
+    me.birthday = "91119";
+    me.family = function(){}
+    console.log(me);
+
+//---------------------------------------------------------------------------------------------
+
+
+</script>
