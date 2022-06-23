@@ -1,0 +1,59 @@
+<!-- EX07_function_test.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <form name="frm">
+        <label for="">숫자를 입력하세요
+        <input type="text" name="num" size="3" value="1" />
+        <input type="text" name="num" size="3" value="2" />
+        <input type="text" name="num" size="3" value="3" />
+        <input type="text" name="num" size="3" value="4" />
+        <input type="text" name="num" size="3" value="5" />
+    </label>
+
+    <input type="button" value="총합" onclick="javascript:testFunc('sum')" />
+    <input type="button" value="곱셉" onclick="javascript:testFunc('square')"/>
+    </form>
+</body>
+
+    <script>
+        function testFunc(arg){
+            // 배우러 변수 : document
+            let data = document.frm.num; // 작성한 input태크를 선택해서 저장
+
+
+            console.log(data);
+            if(arg === 'sum'){
+                arrProcess(data, sum) 
+                alert("합계 : " + sumResult);}
+                else{
+                arrProcess(data, square) 
+                alert("제곱 : " + squareResult);}
+        }
+
+        function arrProcess(data, funcName){
+            // 분해
+            for( key = 0; key < data.length; key++){
+                funcName(data[key].value); 
+                // 고차함수 : 함수의 이름을 인수(파라미터)로 사용
+            }
+        }
+
+        let sumResult = 0;
+        function sum(data){
+            // alert("sum함수입니다.");
+            sumResult += parseInt(data);
+        }
+        
+        let squareResult = [];
+        function square(data){
+            // alert("sum함수입니다.");
+            squareResult.push(data*data);
+        }
+    </script>
+
+</html>
