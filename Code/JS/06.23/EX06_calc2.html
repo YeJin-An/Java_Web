@@ -33,12 +33,55 @@
         }
         return cnt;
     }
-
+    
     console.log(usr_output(usr[0],usr[1],usr[2]));
+    
+    
+    // ------------------------------------------------------------------------
+
+    let arr = start();
+    let sum = calc(arr);
+    console.log(sum);
+    
+    let sum2 = calc(arr);
+    console.log(sum2);
+
+    console.log(start()); // (1회성으로 사용하고 종료되는 상황)
 
 
-// ------------------------------------------------------------------------
+    function start(){
+        var arr = [];
 
+        for(let i = 0; i < 3; i++){
+            if(i == 1){arr[i] = prompt("기호를 입력해주세요 \n[ + - * / ]")}
+            // 0일때는 1번째
+            // 2일대는 2번째
+            else{arr[i] = Number(prompt( i + " 번째 숫자를 입력해주세요." ))}
+        }
+        return calc(arr);
+    }
+
+    function calc(arr){
+        let sum = 0;
+
+        switch(arr[1]){
+            case "+":
+                sum = arr[0] + arr[2];
+                break;
+            case "-":
+                sum = arr[0] - arr[2];
+                break;
+            case "*":
+            case "X":
+                sum = arr[0] * arr[2];
+                break;
+            case "/":
+                sum = arr[0] / arr[2];
+                break;
+            default: break;
+        }
+        return sum;
+    }
 
 
 // ------------------------------------------------------------------------
