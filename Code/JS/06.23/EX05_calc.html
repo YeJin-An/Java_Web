@@ -1,0 +1,54 @@
+<!-- EX05_calc.html -->
+
+<script>
+
+// ------------------------------------------------------------------------
+
+    // addNum +
+    // minusNum -
+    // multiNum *
+
+    function addNum(x,y){return console.log(x + y);}
+    function minusNum(x,y){return console.log(x - y);}
+    function multiNum(x,y){return console.log(x * y);}
+
+    addNum(2,3);
+    minusNum(2,3);
+    multiNum(2,3);
+
+// ------------------------------------------------------------------------
+
+    // addNum2 < a, b
+    let sum;
+    function addNum2(a , b){
+        let sum = 0;
+        for(let i = a; i <= b; i++){sum += i}
+        return sum;}
+
+    sum = addNum2(-3,10);
+    console.log(sum);
+
+// ------------------------------------------------------------------------
+
+    // c : + - * /
+    function calc(a , b , c){
+        if(a > 0 && b > 0){
+            switch(true){
+                case c == "+": return a + b; break;
+                case c == "-": return a - b; break;
+                case c == "*": return a * b; break;
+                case c == "/": return a / b; break;}}
+        else{return "calc 형식이 아님.";}}
+
+    console.log(calc(-1,2,"+"));
+    console.log(calc(-2,2,"-"));
+    console.log(calc(1,2,"*"));
+    console.log(calc(1,2,"/"));
+
+    // 1. 숫자 2개를 입력하면 그 숫자 범위에 해당하는 값들을 사칙연산해주는 함수
+    // 2. 숫자 2개 + 기호1개를 입력하면 사칙연산해주는 함수
+    // * 함수내의 console.log, document.write 없게 작성해주세요 ^^
+
+// ------------------------------------------------------------------------
+
+</script>
