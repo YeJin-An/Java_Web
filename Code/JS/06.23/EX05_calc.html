@@ -21,8 +21,14 @@
     // addNum2 < a, b
     let sum;
     function addNum2(a , b){
-        let sum = 0;
-        for(a; a <= b; a++){sum += a}
+
+        
+        while(a <= b){
+            
+            let sum = 0;
+            sum = sum + a;
+            a++;
+        }
         return sum;}
 
     sum = addNum2(-3,10);
