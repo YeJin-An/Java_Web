@@ -1,0 +1,93 @@
+<!-- EX10_Event_name.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="tagbtn()" >이벤트버튼</button>
+
+    <h1> Tag Name </h1>
+    <ul>
+        <li>1번째</li>
+        <li>2번째</li>
+        <li>3번째</li>
+        <li>4번째</li>
+        <li>5번째</li>
+    </ul>
+
+    <hr>
+    <button onclick="idbtn()"> 이벤트버튼 </button>
+    <p id = "demo">1</p>
+    <p id = "demo">2</p>
+    <p id = "demo">3</p>
+
+    <hr>
+    <button onclick="classbtn()">이벤트버튼</button>
+    <h1 class="red">ClassName</h1>
+    <ul>
+        <li class="red">1번째</li>
+        <li>2번째</li>
+        <li class="red">3번째</li>
+        <li>4번째</li>
+        <li class="red">5번째</li>
+    </ul>
+
+    <hr>
+    <button onclick="namebtn()">이벤트버튼</button>
+    <h1 class="first">ClassName</h1>
+    <ul>
+        <li>1번째</li>
+        <li>2번째</li>
+        <li>3번째</li>
+        <li>4번째</li>
+        <li>5번째</li>
+    </ul>
+</body>
+
+<script>
+    function tagbtn(){
+        let selected = document.getElementsByTagName("li");
+
+        console.log(selected.item(0).style.color="red");
+        // console.log(selected[0].style.color="red");
+        
+        // while(selected != undefined){
+        //     i = 0;
+        //     console.log(selected.item(i).style.color="red");
+        //     i++;
+
+        // }
+    }
+
+    function idbtn(){
+        // id가 같으면 첫번째만 선택 > id가 같게 하면 원하는 구도로 설정하지 못한다! > error
+        document.getElementById("demo").innerHTML = "안녕하세요";
+    }
+
+    function classbtn(){
+        let query = document.getElementsByClassName("red");
+
+        for(var i = 0; i < query.length; i++){
+            query.item(i).style.color = "red";
+        }
+        
+        
+    }
+    
+    function namebtn(){
+        let query = document.getElementsByName("first");
+        for(var i = 0; i < query.length; i++){
+            query.item(i).style.color = "red";
+        }
+        
+        let selected2 = document.getElementsByTagName("li");
+        for(var i = 0; i < selected2.length; i++){
+            selected2.item(i).style.color = "green";
+        }
+        
+    }
+</script>
+
+</html>
