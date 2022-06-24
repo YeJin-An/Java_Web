@@ -1,0 +1,45 @@
+<!-- Ex03_Event.html -->
+
+<script>
+
+    // 이벤트(사건, 시점, 상황)
+    // HTML 요소 안에서의 사건 발생 > 사건이 발생하면 특정한 동작을 하겠다.
+    // 이벤트를 발생시키는 조건 : 키보드, 마우스, DOM, Window 등등...
+    // 마우스를 클랙할때, 누르고있을때, 드래그하고있을때, 더블클릭했을때 등등...
+    // 키보드 누르고 있을때, 눌렀다가 땟을때, keyup, keydown
+    // DOM window : focus관련 이벤트
+
+
+    // JS : 이벤트에 대한 것들 정의 : click 이멘트가 발생하면 그에 대한 정의
+
+    // 이벤트가 발생한 대상 > 이벤트의 정의 연결
+    // 정의된 이벤트 > 특정동작을 하겠다고 연결
+    // 1. 이벤트가 발생할 대상
+    // 2. 발생할 이벤트를 정의
+    // 2. 발생할때 ! 특정 동작을 설명(코딩)
+    // p 태그를 선택해서 클릭이 되면 생상을 바꿔라, 글씨바꿔라
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">눌러주세요</button>
+    <p id="text"></p>
+
+    <script>
+        let btn = document.getElementById("btn");
+
+        // addEventListener("이벤트명", "함수")
+        // btn.addEventListener("click", btnclick);
+        btn.onclick = btnclick;
+
+
+        function btnclick(){
+            document.getElementById("text").innerHTML = "버튼 클랙 이벤트 실행";
+        }
+    </script>
+
