@@ -1,0 +1,41 @@
+<!-- EX07_Event.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>이벤트 차이</h2>
+    <button id="btn1">클릭 1</button>
+    <button id="btn2">클릭 2</button>
+</body>
+
+    <script>
+
+        let btn1 = document.getElementById("btn1");
+        let btn2 = document.getElementById("btn2");
+
+        function fn1(){
+            console.log("fn1");
+        }
+
+        function fn2(){
+            console.log("fn2");
+        }
+
+        btn1.onclick = fn1; //이벤터가 덮어씌워져서 사라짐
+        btn1.onclick = fn2; 
+        // fn2로 출력
+
+        btn2.addEventListener("click", fn1);
+        btn2.addEventListener("click", fn2);
+        // 옛방식 > 이벤트명이 같을 경우 덮어씌워짐
+        // 표준방식 > 이벤트명이 같더라도 다른 이벤트로 처리
+        // fn1 와 fn2로 출력
+
+    </script>
+</html>
