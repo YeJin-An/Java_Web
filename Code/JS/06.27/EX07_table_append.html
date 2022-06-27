@@ -1,0 +1,68 @@
+<!-- EX07_table_append.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    // 태그 혹은 객체에 이벤트를 연결할때 "on" 뒤에 이벤트명으로 작성
+    // 태그.on이벤트명 = 함수
+    //                  1회성 함수면 function 함수명(){ ... }   <<
+    //                  다회성 : 함수명(별도의 함수로 정의하기) 
+
+    window.onload = function(){
+        let bInsert = document.getElementById('bInsert');
+
+        // 1회성 함수 실행
+        // bInsert.onclick = function(){ }
+        // bInsert.addEventListener("click",function(){ }) // << 가장 추천하는 방법
+
+        // 별도의 정의된 함수가 있을 경우
+        // bInsert.onclick = 함수명();
+        // bInsert.addEventListener("click",함수명)
+
+        bInsert.addEventListener("click", function(){
+            alert('1');
+        })
+    }
+</script>
+<body>
+    <H2>고객정보 입력</H2>
+
+    <form name="inForm" method="post">
+        <table border = 1>
+            <tr>
+                <td width="80" align="center">Name</td>
+                <td width="50" align="center">Age</td>
+                <td width="100" align="center">Tel</td>
+                <td width="250" align="center">Addr</td>
+            </tr>
+            <tr>
+                <td align="center"><input type="text" size="8" name="name" id="name"></td>
+                <td align="center"><input type="text" size="4" name="age" id="age"></td>
+                <td align="center"><input type="text" size="12" name="tel" id="tel"></td>
+                <td align="center"><input type="text" size="30" name="addr" id="addr"></td>
+            </tr>
+            <tr>
+                <td colspan="4" align="center">
+                    <input type="button" value="입력" id="bInsert">
+                </td>
+            </tr>
+        </table>
+        <hr>
+        <h2>고객정보 목록보기</h2>
+        <table>
+            <tr>
+                <td width="80" align="center">Name</td>
+                <td width="50" align="center">Age</td>
+                <td width="100" align="center">Tel</td>
+                <td width="250" align="center">Addr</td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
