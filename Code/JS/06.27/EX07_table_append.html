@@ -26,7 +26,51 @@
         // bInsert.addEventListener("click",함수명)
 
         bInsert.addEventListener("click", function(){
-            alert('1');
+            // 1. 이벤트 활성화 확인 alert('1');
+
+            // 2. 입력한 값 변수로 저장하기( 입력한 값을 얻어온다. )
+            let name = document.getElementById("name").value;
+            let age = document.getElementById("age").value;
+            let tel = document.getElementById("tel").value;
+            let addr = document.getElementById("addr").value;
+
+            // 3. 입력한 값을 보여줄 테이블 선택 하든가
+            //     입력한 값을 규칙에 저장할 캐그를 만들든가
+            //  테이블 요소 선택
+            let lisTable = document.getElementById("listTable");
+
+            // 테이블을 구성하는 요소 생성( 입력한 값을 배치할 태그임. )
+            let tr = document.createElement("tr");
+            let td1 = document.createElement("td");
+            let td2 = document.createElement("td");
+            let td3 = document.createElement("td");
+            let td4 = document.createElement("td");
+
+            // 값과 td를 연결
+            // 1. td.innerHTML = 값 : 태그에 직접 적용
+            // 2. createText(값)    : 값을 텍스트노드화시켜놓고 append 실행
+
+            let text1 = document.createTextNode(name);
+            let text2 = document.createTextNode(age);
+            let text3 = document.createTextNode(tel);
+            let text4 = document.createTextNode(addr);
+
+            // <td>태그 안에 값 입력
+            td1.appendChild(text1);
+            td2.appendChild(text2);
+            td3.appendChild(text3);
+            td4.appendChild(text4);
+
+            // <tr> 태그 안에 <td> 태그 입력
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+            tr.appendChild(td4);
+
+            // <table> 태그 안에 <tr> 태그 입력
+            listTable.appendChild(tr);
+
+            // 원리 : 기본적인 원리 파악해야합니다. > 간소화된 함수들을 적용
         })
     }
 </script>
@@ -55,12 +99,12 @@
         </table>
         <hr>
         <h2>고객정보 목록보기</h2>
-        <table>
+        <table id = "listTable", border = 1>
             <tr>
                 <td width="80" align="center">Name</td>
-                <td width="50" align="center">Age</td>
-                <td width="100" align="center">Tel</td>
-                <td width="250" align="center">Addr</td>
+                <td width="80" align="center">Age</td>
+                <td width="80" align="center">Tel</td>
+                <td width="80" align="center">Addr</td>
             </tr>
         </table>
     </form>
