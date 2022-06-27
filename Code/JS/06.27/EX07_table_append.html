@@ -28,49 +28,28 @@
         bInsert.addEventListener("click", function(){
             // 1. 이벤트 활성화 확인 alert('1');
 
-            // 2. 입력한 값 변수로 저장하기( 입력한 값을 얻어온다. )
-            let name = document.getElementById("name").value;
-            let age = document.getElementById("age").value;
-            let tel = document.getElementById("tel").value;
-            let addr = document.getElementById("addr").value;
+            // 3. 원리 : 기본적인 원리 파악해야합니다. > 간소화된 함수들을 적용
 
-            // 3. 입력한 값을 보여줄 테이블 선택 하든가
-            //     입력한 값을 규칙에 저장할 캐그를 만들든가
-            //  테이블 요소 선택
-            let lisTable = document.getElementById("listTable");
+            let inputArr = document.querySelectorAll("input[type='text']")
+                console.log("inputArr : ");
+                console.log(inputArr)
+            let listTable = document.getElementById("listTable");
+                console.log("listTable : ");
+                console.log(listTable);
+            let newRow = listTable.insertRow();
+                console.log("newRow : ")
+                console.log(newRow);
 
-            // 테이블을 구성하는 요소 생성( 입력한 값을 배치할 태그임. )
-            let tr = document.createElement("tr");
-            let td1 = document.createElement("td");
-            let td2 = document.createElement("td");
-            let td3 = document.createElement("td");
-            let td4 = document.createElement("td");
+            for(let i = 0; i< inputArr.length; i++){
+                    console.log("inputArr["+i+"].value : "+  inputArr[i].value)
+                newRow.insertCell().innerHTML = inputArr[i].value;
+            }
 
-            // 값과 td를 연결
-            // 1. td.innerHTML = 값 : 태그에 직접 적용
-            // 2. createText(값)    : 값을 텍스트노드화시켜놓고 append 실행
+            // let newRow = document.getElementById("listTable").insertRow();
 
-            let text1 = document.createTextNode(name);
-            let text2 = document.createTextNode(age);
-            let text3 = document.createTextNode(tel);
-            let text4 = document.createTextNode(addr);
-
-            // <td>태그 안에 값 입력
-            td1.appendChild(text1);
-            td2.appendChild(text2);
-            td3.appendChild(text3);
-            td4.appendChild(text4);
-
-            // <tr> 태그 안에 <td> 태그 입력
-            tr.appendChild(td1);
-            tr.appendChild(td2);
-            tr.appendChild(td3);
-            tr.appendChild(td4);
-
-            // <table> 태그 안에 <tr> 태그 입력
-            listTable.appendChild(tr);
-
-            // 원리 : 기본적인 원리 파악해야합니다. > 간소화된 함수들을 적용
+            // for(let i = 0; i< 4; i++){
+            //     newRow.insertCell().innerHTML = document.querySelectorAll("input[type='text']")[i].value;
+            // }
         })
     }
 </script>
