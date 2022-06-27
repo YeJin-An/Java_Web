@@ -1,0 +1,35 @@
+<!-- EX06_node_append.html -->
+
+<html>
+    <h1>추가 연습</h1>
+    <h2 id="item">javascript</h2>
+    <div id = "list">
+        <p>HTML</p>
+        <p id = "baseitem">CSS</p>
+    </div>
+    <button onclick="appendBtn()">추가 버튼</button>
+
+    <script>
+        function appendBtn(){
+            var h1 = document.createElement("h1");
+            var h1_text = document.createTextNode("노드 테스트");
+
+            // 태그.appendchild("자식노드") : 부모노드에 자식노드를 추가하는 함수
+            h1.appendChild(h1_text); 
+            console.log(h1);
+            console.log(h1.text);
+
+            let parent = document.getElementById('list');
+            let newitem = document.getElementById('item');
+            // 기존에 있는 태그를 append(추가)한다면 ?
+            // 태그는 중복작성이되지않기때문에 기존에 있던 태그를 추가하려는 기준태그의 자식으로 이동합니다.
+            // parent.appendChild(newitem);
+
+            // inserBefore > 부모태그.insertBefore(새로운태그, 기존자식태그) 
+            // > 새로운태그를 자식태그앞에 생성
+            let baseitem = document.getElementById("baseitem");
+
+            parent.insertBefore(newitem, baseitem);
+        }
+    </script>
+</html>
