@@ -1,0 +1,116 @@
+<!-- EX04_node_std.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" name="btn" value="Node 버튼" onclick="nodeBtn()" />
+
+    <div>
+        <ul>
+            <li>1-1</li>
+            <li>1-2</li>
+            <li>1-3</li>
+        </ul>
+
+        <ul>
+            <li>1-4</li>
+            <li>1-5</li>
+            <li>1-6</li>
+        </ul>
+
+        <ul>
+            <li>1-7</li>
+            <li>1-8</li>
+            <li>1-9</li>
+        </ul>
+    </div>  
+
+    <p id="nodeStd">시작점</p> <!-- 1-1 / 1-9 / 2-1 / 2-5 -->
+
+    <div>
+        <ul>
+            <li>2-1</li>
+            <li>2-2</li>
+            <li>2-3</li>
+        </ul>
+
+        <ul>
+            <li>2-4</li>
+            <li>2-5</li>
+            <li>2-6</li>
+        </ul>
+
+        <ul>
+            <li>2-7</li>
+            <li>2-8</li>
+            <li>2-9</li>
+        </ul>
+
+    </div>
+    </div>
+
+    <script>
+        
+        function nodeBtn(){
+            // alert('1'); // 클릭하면 나오는 함수 연결 확인
+
+            // 순서 [1-1]
+            // // 1) parentNode 부모노드 2) childNodes[3] 3) childNodes[1] 4) childNodes[0] 5)nodeValue
+            // var nodeExam = document.getElementById("nodeStd")
+            // .parentNode.childNodes[3].childNodes[1].childNodes[1].childNodes[0].nodeValue;
+
+            // var nodeExam = document.getElementById("nodeStd")
+            // .previousSibling.previousSibling.childNodes[1].childNodes[1].childNodes[0].nodeValue;
+
+            // // 순서 [1-9]
+            // var nodeExam = document.getElementById("nodeStd")
+            // .parentNode.childNodes[3].childNodes[5].childNodes[5].childNodes[0].nodeValue;
+            
+            
+            // // 순서 [2-1]
+            // var nodeExam = document.getElementById("nodeStd")
+            // .parendNode.childNodes[7].childNodes[1].childNodes[1].childNodes[0].nodeValue;
+            
+            // var nodeExam = document.getElementById("nodeStd")
+            // .nextSibling.nextSibling.childNodes[1].childNodes[1].childNodes[0].nodeValue;
+
+            // // 순서 [2-5]
+            var nodeExam = document.getElementById("nodeStd")
+            .nextSibling.nextSibling.childNodes[3].childNodes[3].childNodes[0].nodeValue;
+
+            // var e_nodeExam = document.getElementById("nodeStd")
+            // .nextElementSibling.children[1].children[1].textContent;
+            // * childNodes[0].nodeValue = textconent 같은 기능을 합니다. (태그내의 텍스트를 가져올때 사용),innerHTML도 동일
+            // element 을 선택하는 방법
+            console.log(e_nodeExam);
+
+            // 단점 !! 
+            // 기본적인 선택의 기준이 되는것이 요소노드 << 
+            // node 건색하면 모든 노드가 검색 
+            // >> 비 요소 노드 (text, 주석 ,속성) 때문에 요소노드 선택이 불편함.
+            // Element 단어가 들어가면 보통 요소노드만 선택
+
+            var nodeExam = document.getElementById("nodeStd").previousSibling;
+            console.log(nodeExam); // 비요소노드 포함 형제
+
+            var e_nodeExam = document.getElementById("nodeStd").previousElementSibling;
+            // * 비요소노드 : text, 주석, 속성 같이 "태그"가 아닌 노드
+            //   비요소노드 포함     비요소노드만 포함
+            //   parentNode         parentElement        *보통 같은기능을 함.
+            //   firstChild         firstElementChild
+            //   lastChild          lastElementChild
+            //   nextSibling        nextElementSibling
+            //   previousSibling    previousElementSibling
+            //   childNodes         children
+            console.log(e_nodeExam); // 요소노드만 형제
+        }
+
+    </script>
+</body>
+</html>
