@@ -1,0 +1,118 @@
+<!-- EX02_node.html -->
+
+
+<script>
+
+    // 노드 : 요소와 같은 의미, HTML문서상있는 정보를 저장하고있는 단위
+    //          <p style="color:red">안녕하세요</p>
+    // 태그 : p태그
+    /* 주석내용 */
+
+    // 노드 : HTML DOM에 정의된 노드(정보의 단위)를 이용하여 정확한 선택을 하기위해 사용
+    //      * HTML 문서의 모든 것은 노드로 구분가능, 정의가능
+    // 노드의 종류
+    // 1. 문서노드 : HTML 전체를 나타내는 노드
+    // 2. 요소노드 : 태그를 의미, 속성값을 가질 수 있음.
+    // 3. 속성노드 : 요소노드의 속성을 의미, 태그의 자식개념이 아닙니다.
+    // 4. 텍스트노드 : HTML의 텍스트, "안녕하세요"
+    // 5. 주석노드 : HTML 주석
+
+    // document 시작되는 노드 트리 라는 계층구조를 구성 > 노드집합, 노드간 관계
+    // document >> 글자까지 모든게 노드 > 계증구조화 > 원하는대로 선택가능
+
+    // 1. 루트 노드는 유일, 단하나 존재
+    // 2. 모든 노드는 단하나의 부모노드 존재 > 모든 노드는 자식노드를 가질 수 있습니다.
+
+    // 3. 형제노드 : 같은 부모내에 있는 모든 노드
+    //    조상노드 : 내 현재 노드보다 더 상위노드
+    //    자손노드 : 내 현재 노드보다 더 하위노드
+
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+    <h1>연습</h1>
+    <p id="document"></p>
+    <p id="html"></p>
+    <script>
+        // 문서모델객체 nodeType
+        //   노드 이름  nodeName
+        document.getElementById("document").innerHTML = document.childNodes[1].nodeName;
+        // document.getElementById("html").innerHTML = document.childNodes[1].childNodes[0].nodeName;
+        document.getElementById("html").innerHTML = document.childNodes[1].childNodes[2].nodeName;
+    </script>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+    <h1 id="heading">연습 2</h1>
+    <p id="text1">텍스트</p>
+    <p id="text2">텍스트</p>
+
+    <script>
+        // nodeValue 
+        // 1. 선택된 것이 요소노드 이면 null 발생
+        // 2. 텍스트일경우 테스트노드 하위를 선택해서.nodevalue사용하면 출력가능
+        // * nodeValue : 노드타입에 따라 출력값이 달라짐.
+
+        var heading = document.getElementById("heading").firstChild.nodeValue;
+
+
+        document.getElementById("text1").innerHTML = heading;
+        // 자식중에 첫번째 인데?? '연습2'로 출력이 되네요??
+        document.getElementById("text2").firstChild.nodeValue = heading;
+    </script>
+
+<!-- ------------------------------------------------------------------------------------------------ -->
+
+</body>
+<script>
+
+    /*
+        1. 선택하는 방법
+        id, className, tagName, Name 속성을 통해서 요소(태그)를 선택했습니다.
+        없다면 ? HTML의 계층구조를 이용해서 선택
+
+        노드 이용하는방법
+        * 모든 기준은 본인태그(id, className, tagName, Name)를 시작점으로 생각함.
+
+        1. 부모 노드 : 노드별로 단 하나만 존재하는 부모노드, 자신의 태그를 감싼 바로 위 상위 태그
+        2. 자식 노드 : 노드 별로 바로 아래 하위 태그들 (다수) 자신의 태그가 감싸고 있는 바로 아래 하위 태그
+        3. 형제 노드 : 같은 부모 노드를 가지는 모든 태그
+        4. 조상 노드 : 부모 노드를 포함해서 계층적으로 현재 노드보다 상위 존재하는 모든 노드
+        5. 자손 노드 : 자식 노드를 포함해서 계층적으로 현재 노드보다 하위 존재하는 모든 노드
+    */
+
+    // parentNode : 부모 노드를 호출
+    // document.parentNode;
+
+    // // 자식 노드 리스트(배열)
+    // document.childNodes;
+    // // 자식중에 첫번째
+    // document.firstChild;
+    // // 자식중에 마지막
+    // document.lastChild;
+
+    
+    // // 다음 형제 노드
+    // document.nextSibling
+    // // 이전 형제 노드
+    // document.previousSibling
+
+
+    // nodeName : 태그명
+    // nodeValue : 노드의 값
+    // nodeType : 노드 타입에 대한 숫자가 출력
+    // 1. 요소노드
+    // 2. 속성노드
+    // 3. 텍스트 노드
+    // 8. 주석 노드
+    // 9. 문서 노드
+
+</script>
+</html>
