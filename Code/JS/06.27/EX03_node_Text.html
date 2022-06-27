@@ -1,0 +1,49 @@
+<!-- EX03_node_Text.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>빈테그스트 노드</h1>
+    <div id = "parentNode">
+        <p><span>첫번째</span>단락</p>
+        <p>두번째단락</p>
+    </div>
+
+    <button onclick="nodebtn()">노드 찾기 버튼</button>
+    <p id="nodename"></p>
+
+    <script>
+
+        /* 
+            브라우저마다 환경이 다르기때문에 참고
+            // 태그와 태그사이에 있는 띄어쓰가나 줄바꿈을 구글 > 테스트노드로 변환
+            
+            * 변환으로 인해서 텍스트노드가 중간에 끼어든다는 것을 인지
+            // noteType
+        */
+
+        let lastChild
+        function nodebtn(){
+            let parentNode = document.getElementById("parentNode");
+
+            // nodetype : 요소 노드 1, 텍스트 노드 3
+            findchild(parentNode);
+            document.getElementById("nodename").innerHTML = lastChild.nodename;
+        }
+
+        function findchild(parentNode){
+            let lastChild = parentNode.lastChild;
+            while(lastChild.nodeType != 1){
+                lastChild = lastChild.previousSibling; 
+            }
+        }
+
+    </script>
+</body>
+</html>
