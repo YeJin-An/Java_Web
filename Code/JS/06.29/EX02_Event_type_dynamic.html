@@ -1,0 +1,85 @@
+<!-- EX02_Event_type2.html-->
+
+<html>
+    <head>
+        <style>
+            .target{
+                width : 50px;
+                height : 50px;
+                background-color: black;
+                color : white;
+            }
+
+            .child{
+                position : absolute;
+                width : 100px;
+                height : 100px;
+                background-color: blue;
+            }
+            
+            .parent{
+                position: absolute;
+                width : 200px;
+                height : 200px;
+                background-color: green;
+            }
+
+            .root{
+                position: absolute;
+                width : 300px;
+                height : 300px;
+                background-color: red;
+            }
+
+            /* .btn{
+                margin-top : 320px;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="root">
+            <button class="btn" name="btn">Element 동적 추가</button>
+        </div>
+    </body>
+
+    <script>
+
+        // function 함수의 이벤트용 변수를 작성 : e, event
+        document.querySelector('.root').addEventListener("click",function(e){
+            alert('root');
+            // 이벤트용변수.target : 선택된 대상의 정보를 추출
+            /*
+                1. 동적 태그가 생성된 후 동적 태그를 클릭 >
+                2. 동적으로 만들어진 <span>태그는 click이벤트 만들지 못했기 때문에 다른 행동없이 
+                    버블링(상위태그 전달) >> button 으로 이벤트 전달
+                3. 동적으로 만들어진 <button> 태그는 click이벤트가 없어서 다른 행동없이
+                    버블링 진행(상위태그 전달) >> h2 로 이벤트 전달
+                4. h2도 이벤트 상황 없이 버블링 진행(상위태그로 전달) > row
+                5. row 이벤트 상황 없이 버블링 진행 (상위태그로 전달) > root
+                6. root 이벤트상황 있음 < 코드 진행 > 버블링 진행(상위태그로 전달) > body > html > document
+            */
+
+            // target : 내가 이벤트를 발생시킨 요소( click : 내가 클릭한 자식 요소 )
+            // currentTarget : 내가 이벤트를 발생기킨 요소의 부모요소( 이벤트가 바인딩된 부모 )
+            console.log(e.target);
+            console.log(e.currentTarget);
+
+            // 버블링 활용 > target 변수 활성시켜서 우리가 원하는 동적태그들에게 이벤트를 할당
+            // 동적으로 할당되는 요소들을 포함하는 부모 요소(태그)에 이벤트 할당
+            // if e.target == 어떤 요소면 이벤트 적용
+
+            // if (e.target.id == ''){ ... }
+        })
+
+        document.querySelector(".btn").addEventListener("click",function(){
+            let div = document.createElement("div");
+            div.className = "row";
+
+            div.innerHTML = 
+            '<h2 class="parent"><button class="child"><span class="target">targer</span></button></h2>';
+
+            document.querySelector(".root").appendChild(div);
+        })
+
+    </script>
+</html>
