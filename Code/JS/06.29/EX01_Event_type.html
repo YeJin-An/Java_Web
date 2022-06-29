@@ -1,0 +1,123 @@
+<!-- EX01_Event_type.html -->
+
+<html>
+    <head>
+        <style>
+            .target{
+                width : 50px;
+                height : 50px;
+                background-color: black;
+                color : white;
+            }
+
+            .child{
+                position : absolute;
+                width : 100px;
+                height : 100px;
+                background-color: blue;
+            }
+            
+            .parent{
+                position: absolute;
+                width : 200px;
+                height : 200px;
+                background-color: green;
+            }
+
+            .root{
+                position: absolute;
+                width : 300px;
+                height : 300px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="root">
+            <div class="parent">
+                <div class="child">
+                    <div class="target">Target</div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script>
+
+        // 이벤트 버블링 : 특정 요소에서 이벤트가 발생했을때 해당 이벤트가 상위 요소로 전달되어가는 특성 
+        // 태그가 이벤트가 발생하면
+        // 자식태그가 이벤트를 처리한 후에 부모 태그로 이벤트를 전달하는 특성
+        // 이벤트를 처리하는 기본방식
+        /*
+            1. target 클래스 클릭 하면?!
+            이벤트 흐름 : 가장 깊은 요소(자식요소) > 가장 얕은 요소(부모요소) 이어집니다.
+            target > child > parent > root > body > html > document
+
+            2. child 클래스 클릭 하면 ?!
+            child > parent > root > body > html > document
+
+            3. parent 클래스 클릭 하면 ?!
+            parent > root > body > html > document
+
+            4. root 클래스 클릭 하면 ?!
+            root > body > html > document
+
+            
+        */
+        document.querySelector('.target').addEventListener("click",function(){
+            alert("target");
+        }.true);
+
+        document.querySelector('.child').addEventListener("click",function(){
+            alert("child");
+        }.true);
+        document.querySelector('.parent').addEventListener("click",function(){
+            alert("parent");
+        }.true);
+        document.querySelector('.root').addEventListener("click",function(){
+            alert("root");
+        }.true);
+        document.querySelector('body').addEventListener("click",function(){
+            alert("body");
+        }.true);
+
+        // 이벤트 캡처링 : 선택요소의 부모이벤트부터 선택요소까지 이벤트가 전달되는 특성
+        // * 잘 쓰이는 방법이 아닙니다.
+
+        // addEventListener(이벤트명, 함수, 이벤트처리방법)
+        // 처리방법 : 버블링(기본값,false), 캡처링(true)
+
+    </script>
+</html>
+
+<!-- 이벤트 버블링과 캡처링의 차이점 -->
+<!-- 버블링 : 아래에서 위로 , 캡처링 : 위에서 아래로 -->
+
+<script>
+
+    // 이벤트 :  사용자의 어떤 행위
+    // 이벤트 정의 > 이벤트 바인딩이라고 부릅니다.
+
+    /*
+        이벤트 바인딩 과정
+        1. 이벤트를 받아줄 요소 (태그) > document.get...
+        2. 태그가 어떤 이벤트에 반응할지, 요소(태그)와 이벤트를 연결해주는 바인딩 (addEventListener)
+        3. 이벤트가 발생했을 때 실행할 코드를 작성해야합니다. > 함수(function)
+
+        바인딩 방법 3가지
+        1. 태그내에 작성 <테그 onclick="">
+        * HTML 태그와 JS코드는 분리하는 것이 좋기때문에 권장하지 않는 방법
+
+        2. JS 코드내에서 요소를 선택하고 on이벤트로 바인딩
+            요소.onclick = 함수()
+        * 단점 : 같은 이벤트를 적용할경우 하나만 적용되는 단점
+
+        3. JS 코드내에서 요소를 선택하고 addEventLinstener(이벤트, 함수)로 바인딩
+        * 권장하는 방법
+
+
+        이벤트 버블링 : 특정 요소에서 이벤트가 발생했을때 해당 이벤트가 상위 요소로 전달되어가는 특성 
+    
+    */
+
+</script>
