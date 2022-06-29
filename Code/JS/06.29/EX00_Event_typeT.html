@@ -1,0 +1,30 @@
+<!-- EX01_Event_typeT.html -->
+
+<html>
+    <body>
+        <button id="btn">버튼</button>
+        <p id="base"></p>
+    </body>
+
+    <script>
+
+        document.getElementById("btn").addEventListener("click",function(){
+
+            // 동적할당
+            document.getElementById("base").innerHTML = '<button class="btn2">테스트버튼</button>';
+            // document.getElementById("base").innerText = '<button>';
+        })
+
+        // document.getElementById("btn2").addEventListener("click" , function(){
+        //     alert('1');
+        // })
+
+        let btnclass = document.getElementsByClassName("btn2");
+        for(let i = 0; i < btnclass.length; i++){
+            document.getElementsByClassName("btn2")[i].addEventListener("click",function(){
+                alert('1');
+            })
+        }
+
+    </script>
+</html>
