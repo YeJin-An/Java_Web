@@ -1,0 +1,93 @@
+<!-- EX02_Event_change2.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+
+    <form name="frm">
+
+        <select name="play" size="8">
+            <option>숨쉬기</option>
+            <option>밥먹기</option>
+            <option>그냥있기</option>
+            <option>잠자기</option>
+            <option>술먹기</option>
+            <option>멍때리기</option>
+        </select><br>
+
+        <input type="button" value="▲" id="up"><br><br>
+        <input type="button" value="▼" id="down"><br><br>
+        
+    </form>
+</body>
+
+    <script>
+
+        let best = document.getElementsByName("play")[0];
+
+        document.getElementById("up").addEventListener("click", function(){
+
+            // # 1 __ 자신의 문제풀이
+            // // alert('up');
+            // // select 태그 변수화
+            // let play = document.getElementsByName("play");
+
+            // // select태그.selectedIndex : 선택된 친구의 인덱스번호를 가지는 변수
+            // let selected = play.selectedIndex = document.getElementsByName("play")[0][1].value;
+            
+            // // select태그.options : select태그의 option을 배열화 한 값
+            // let options = play.options;
+            
+
+            // // 기준 : options변수명[selectedIndex] 내가 선택한 값 > 글자 .text
+
+            // console.log(selected);
+            // console.log(options);
+
+            if(best.selectedIndex > 0){best.selectedIndex--;}
+        })
+
+        document.getElementById("down").addEventListener("click", function(){
+            // alert('down');
+            
+            // 1. select 태그 선택
+            let sel = document.getElementsByTagName("select")[0];
+            let idx = sel.selectedIndex;
+            let optSel = sel.options;
+
+            // select 살에서 선택한 대상의 인덱스번호(배열위치)
+            console.log(idx);
+            // select 상에서 배열
+            console.log(optSel);
+
+            console.log(optSel[idx].text);
+            console.log(optSel[idx+1].text);
+
+            // let str = optSel[idx].text;
+            // optSel[idx].text = optSel[idx+1].text;
+            // optSel[idx+1].text = str;
+            // sel.selectedIndex++;
+
+            // 이 코드의 문제점이 있다?? idx의 값에 여부에따라 제어가 되지 않는다??
+
+            // 그러면, idx의 범위를 지정하는 것이다.
+            if( idx < 5){
+            let str = optSel[idx].text;
+            optSel[idx].text = optSel[idx+1].text;
+            optSel[idx+1].text = str;
+            sel.selectedIndex++;
+            }
+
+        })
+
+    
+
+    </script>
+</html>
